@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Simulator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .reset-data-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .reset-data-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: white;
+        }
+
+        .database-selector {
+            padding: 30px;
+            background: #f8f9fa;
+        }
+
+        .database-selector h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .database-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .database-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .database-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .database-card.loaded {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .database-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .database-questions {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .database-stats {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .stat-badge {
+            flex: 1;
+            text-align: center;
+            padding: 8px;
+            background: #f0f0f0;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        .stat-badge.attempts {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .stat-badge.correct {
+            background: #e8f5e9;
+            color: #388e3c;
+        }
+
+        .stat-badge.score {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+
+        .stat-value {
+            font-size: 18px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            margin-top: 2px;
+        }
+
+        .no-attempts {
+            color: #999;
+            font-size: 12px;
+            text-align: center;
+            padding: 8px;
+            font-style: italic;
+        }
+
+        .load-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 100%;
+        }
+
+        .load-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .file-upload-section {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            border: 2px dashed #ddd;
+            margin-top: 20px;
+        }
+
+        .file-input-label {
+            display: inline-block;
+            padding: 12px 30px;
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .file-input-label:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        .progress-bar {
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .progress-track {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+
+        .question-container {
+            padding: 30px;
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .question-number {
+            font-size: 14px;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .question-topic {
+            font-size: 12px;
+            color: #999;
+            background: #f0f0f0;
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .option {
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .option:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .option-letter {
+            font-weight: 700;
+            color: #667eea;
+            min-width: 24px;
+        }
+
+        .option-text {
+            flex: 1;
+            line-height: 1.5;
+        }
+
+        .option.selected {
+            background: #e8eaf6;
+            border-color: #667eea;
+        }
+
+        .option.correct {
+            background: #e8f5e9;
+            border-color: #4caf50;
+        }
+
+        .option.correct .option-letter {
+            color: #4caf50;
+        }
+
+        .option.incorrect {
+            background: #ffebee;
+            border-color: #f44336;
+        }
+
+        .option.incorrect .option-letter {
+            color: #f44336;
+        }
+
+        .option.disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .feedback {
+            margin-top: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback.correct {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            color: #2e7d32;
+        }
+
+        .feedback.incorrect {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+            color: #c62828;
+        }
+
+        .explanation {
+            margin-top: 15px;
+            padding: 15px;
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .explanation.show {
+            display: block;
+        }
+
+        .explanation-title {
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 8px;
+        }
+
+        .explanation-text {
+            color: #664d03;
+            line-height: 1.6;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .nav-button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .nav-button.primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .nav-button.primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .nav-button.secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .nav-button.secondary:hover:not(:disabled) {
+            background: #667eea;
+            color: white;
+        }
+
+        .save-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+            font-size: 13px;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .save-indicator.show {
+            opacity: 1;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .modal-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .reset-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .reset-option {
+            padding: 15px;
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .reset-option:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .reset-option-icon {
+            font-size: 24px;
+        }
+
+        .reset-option-content {
+            flex: 1;
+        }
+
+        .reset-option-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .reset-option-desc {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .modal-button {
+            padding: 10px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .modal-button.cancel {
+            background: #e0e0e0;
+            color: #666;
+        }
+
+        .modal-button.cancel:hover {
+            background: #d0d0d0;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 20px 30px;
+            background: #f8f9fa;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .community-vote {
+            margin-top: 15px;
+            padding: 12px;
+            background: #f0f4ff;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .community-vote-title {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .vote-distribution {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .vote-item {
+            background: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .question-text {
+                font-size: 16px;
+            }
+
+            .navigation {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .database-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="save-indicator" id="saveIndicator">✓ Progress Saved</div>
+    
+    <!-- Reset Data Modal -->
+    <div class="modal-overlay" id="resetModal">
+        <div class="modal-content">
+            <div class="modal-title">🗑️ Reset Data</div>
+            <div class="modal-description">
+                Choose what data you want to reset. This action cannot be undone.
+            </div>
+            
+            <div class="reset-options">
+                <div class="reset-option" onclick="resetSavedProgress()">
+                    <div class="reset-option-icon">💾</div>
+                    <div class="reset-option-content">
+                        <div class="reset-option-title">Clear Saved Progress</div>
+                        <div class="reset-option-desc">Remove current saved exam position</div>
+                    </div>
+                </div>
+                
+                <div class="reset-option" onclick="resetAllStatistics()">
+                    <div class="reset-option-icon">📊</div>
+                    <div class="reset-option-content">
+                        <div class="reset-option-title">Reset All Statistics</div>
+                        <div class="reset-option-desc">Clear attempts and scores for all databases</div>
+                    </div>
+                </div>
+                
+                <div class="reset-option" onclick="resetEverything()">
+                    <div class="reset-option-icon">🔄</div>
+                    <div class="reset-option-content">
+                        <div class="reset-option-title">Reset Everything</div>
+                        <div class="reset-option-desc">Clear all progress and statistics</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-buttons">
+                <button class="modal-button cancel" onclick="closeResetMenu()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <button class="reset-data-btn" onclick="showResetMenu()">🗑️ Reset Data</button>
+            <h1>🎓 Certification Exam Simulator</h1>
+            <p>Practice makes perfect - Test your knowledge</p>
+        </div>
+
+        <div id="databaseSelector" class="database-selector">
+            <h2>📚 Select Question Database</h2>
+            <div id="databaseGrid" class="database-grid"></div>
+            
+            <div class="file-upload-section">
+                <p style="margin-bottom: 15px; color: #666; font-size: 14px;">Or load a custom database</p>
+                <label for="fileInput" class="file-input-label">
+                    📁 Choose JSON File
+                </label>
+                <input type="file" id="fileInput" accept=".json" onchange="loadDatabaseFile(event)">
+            </div>
+        </div>
+
+        <div id="examContent" style="display: none;">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="correctCount">0</div>
+                    <div class="stat-label">Correct</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="incorrectCount">0</div>
+                    <div class="stat-label">Incorrect</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="scorePercent">0%</div>
+                    <div class="stat-label">Score</div>
+                </div>
+            </div>
+
+            <div class="navigation">
+                <button class="nav-button secondary" id="prevButton" onclick="previousQuestion()">← Previous</button>
+                <button class="nav-button secondary" id="saveButton" onclick="saveProgress()" style="background: #4caf50; color: white; border-color: #4caf50;">💾 Save Progress</button>
+                <button class="nav-button secondary" id="backButton" onclick="backToMenu()">📚 Back to Menu</button>
+                <button class="nav-button primary" id="nextButton" onclick="nextQuestion()">Next →</button>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-info">
+                    <span>Progress</span>
+                    <span id="progressText">0 / 0</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div class="question-header">
+                    <div class="question-number" id="questionNumber">Question 1</div>
+                    <div class="question-topic" id="questionTopic">Topic 1</div>
+                </div>
+
+                <div class="question-text" id="questionText"></div>
+
+                <div class="options" id="optionsContainer"></div>
+
+                <div class="feedback" id="feedback"></div>
+
+                <div class="explanation" id="explanation">
+                    <div class="explanation-title">💡 Explanation</div>
+                    <div class="explanation-text" id="explanationText"></div>
+                </div>
+
+                <div class="community-vote" id="communityVote" style="display: none;">
+                    <div class="community-vote-title">📊 Community Vote Distribution</div>
+                    <div class="vote-distribution" id="voteDistribution"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentDatabase = null;
+        let currentDatabaseName = null;
+        let questions = [];
+        let currentQuestionIndex = 0;
+        let selectedAnswers = [];
+        let answered = false;
+        let stats = {
+            correct: 0,
+            incorrect: 0,
+            attempted: 0
+        };
+
+        // Load database statistics from localStorage
+        function getDatabaseStats(dbName) {
+            const stats = localStorage.getItem(`exam_stats_${dbName}`);
+            return stats ? JSON.parse(stats) : { attempts: 0, totalCorrect: 0, totalQuestions: 0 };
+        }
+
+        // Save database statistics to localStorage
+        function saveDatabaseStats(dbName, correct, total) {
+            const stats = getDatabaseStats(dbName);
+            stats.attempts += 1;
+            stats.totalCorrect += correct;
+            stats.totalQuestions += total;
+            localStorage.setItem(`exam_stats_${dbName}`, JSON.stringify(stats));
+        }
+
+        // Save current exam progress
+        function saveProgress() {
+            if (!currentDatabaseName) {
+                console.warn('No database loaded, cannot save progress');
+                return;
+            }
+            
+            const progress = {
+                databaseName: currentDatabaseName,
+                currentQuestionIndex: currentQuestionIndex,
+                selectedAnswers: selectedAnswers,
+                stats: stats,
+                timestamp: new Date().toISOString()
+            };
+            
+            localStorage.setItem('exam_progress', JSON.stringify(progress));
+            console.log('Progress saved:', progress);
+            
+            // Show save indicator
+            const indicator = document.getElementById('saveIndicator');
+            indicator.classList.add('show');
+            setTimeout(() => {
+                indicator.classList.remove('show');
+            }, 2000);
+        }
+
+        // Load saved progress
+        function loadProgress() {
+            try {
+                const saved = localStorage.getItem('exam_progress');
+                if (!saved) {
+                    console.log('No saved progress in localStorage');
+                    return null;
+                }
+                
+                const parsed = JSON.parse(saved);
+                console.log('Loaded progress:', parsed);
+                return parsed;
+            } catch (error) {
+                console.error('Error loading progress:', error);
+                return null;
+            }
+        }
+
+        // Check if there's saved progress for current database
+        function hasSavedProgress(dbName) {
+            try {
+                const saved = loadProgress();
+                if (!saved) return false;
+                
+                // Check if saved progress matches this database
+                if (saved.databaseName !== dbName) return false;
+                
+                // Check if progress data is valid
+                if (typeof saved.currentQuestionIndex !== 'number') return false;
+                if (!Array.isArray(saved.selectedAnswers)) return false;
+                
+                return true;
+            } catch (error) {
+                console.error('Error checking saved progress:', error);
+                return false;
+            }
+        }
+
+        // Auto-save progress periodically
+        function autoSaveProgress() {
+            if (document.getElementById('examContent').style.display !== 'none') {
+                saveProgress();
+            }
+        }
+
+        // Auto-save every 30 seconds
+        setInterval(autoSaveProgress, 30000);
+
+        // Initialize - show list of common databases
+        function initializeDatabases() {
+            const commonDatabases = [
+                { name: 'cissp-questions.json', title: 'CISSP Questions Set 1', questions: 50 },
+                { name: 'cissp-questions-set2.json', title: 'CISSP Questions Set 2', questions: 50 },
+                { name: 'cissp-questions-set3.json', title: 'CISSP Questions Set 3', questions: 50 },
+                { name: 'cissp-questions-set4.json', title: 'CISSP Questions Set 4', questions: 50 },
+                { name: 'cissp-questions-set5.json', title: 'CISSP Questions Set 5', questions: 50 },
+                { name: 'cissp-questions-set6.json', title: 'CISSP Questions Set 6', questions: 50 },
+                { name: 'cissp-questions-set7.json', title: 'CISSP Questions Set 7', questions: 50 },
+                { name: 'cissp-questions-set8.json', title: 'CISSP Questions Set 8', questions: 50 },
+                { name: 'cissp-questions-set9.json', title: 'CISSP Questions Set 9', questions: 50 },
+                { name: 'cissp-questions-set10.json', title: 'CISSP Questions Set 10', questions: 34 }
+            ];
+
+            const grid = document.getElementById('databaseGrid');
+            grid.innerHTML = '';
+
+            commonDatabases.forEach(db => {
+                const stats = getDatabaseStats(db.name);
+                const card = createDatabaseCard(db.name, db.title, db.questions, stats);
+                grid.appendChild(card);
+            });
+        }
+
+        function createDatabaseCard(filename, title, questionCount, stats) {
+            const card = document.createElement('div');
+            card.className = 'database-card';
+            
+            const hasSaved = hasSavedProgress(filename);
+            
+            let statsHTML = '';
+            if (stats.attempts > 0) {
+                const avgScore = Math.round((stats.totalCorrect / stats.totalQuestions) * 100);
+                
+                statsHTML = `
+                    <div class="database-stats">
+                        <div class="stat-badge attempts">
+                            <span class="stat-value">${stats.attempts}</span>
+                            <span class="stat-label">Attempts</span>
+                        </div>
+                        <div class="stat-badge correct">
+                            <span class="stat-value">${stats.totalCorrect}</span>
+                            <span class="stat-label">Correct</span>
+                        </div>
+                        <div class="stat-badge score">
+                            <span class="stat-value">${avgScore}%</span>
+                            <span class="stat-label">Avg Score</span>
+                        </div>
+                    </div>
+                `;
+            } else {
+                statsHTML = '<div class="no-attempts">No attempts yet</div>';
+            }
+
+            let buttonHTML = '';
+            if (hasSaved) {
+                buttonHTML = `
+                    <button class="load-button" style="background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);" onclick="resumeProgress('${filename}')">
+                        ▶️ Resume Progress
+                    </button>
+                    <button class="load-button" style="margin-top: 8px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);" onclick="loadDatabaseByName('${filename}')">
+                        🔄 Start New
+                    </button>
+                `;
+            } else {
+                buttonHTML = `
+                    <button class="load-button" onclick="loadDatabaseByName('${filename}')">Start Exam</button>
+                `;
+            }
+
+            card.innerHTML = `
+                <div class="database-title">${title}</div>
+                <div class="database-questions">${questionCount} Questions</div>
+                ${statsHTML}
+                ${buttonHTML}
+            `;
+
+            return card;
+        }
+
+        async function loadDatabaseByName(filename) {
+            try {
+                const response = await fetch(filename);
+                if (!response.ok) throw new Error('Database not found');
+                
+                const data = await response.json();
+                currentDatabaseName = filename;
+                loadDatabase(data);
+            } catch (error) {
+                alert('Could not load database: ' + filename + '\n\nPlease make sure the file is in the same directory as this HTML file.');
+            }
+        }
+
+        async function resumeProgress(filename) {
+            const saved = loadProgress();
+            
+            if (!saved) {
+                alert('No saved progress found.');
+                return;
+            }
+            
+            if (saved.databaseName !== filename) {
+                alert('No saved progress found for this database.');
+                return;
+            }
+
+            try {
+                const response = await fetch(filename);
+                if (!response.ok) throw new Error('Database not found');
+                
+                const data = await response.json();
+                
+                if (!data.questions || data.questions.length === 0) {
+                    alert('Invalid database file.');
+                    return;
+                }
+                
+                currentDatabaseName = filename;
+                
+                // Restore saved state
+                currentDatabase = data;
+                questions = data.questions;
+                currentQuestionIndex = saved.currentQuestionIndex || 0;
+                selectedAnswers = saved.selectedAnswers || new Array(questions.length).fill(null);
+                stats = saved.stats || { correct: 0, incorrect: 0, attempted: 0 };
+                
+                // Validate saved data
+                if (currentQuestionIndex >= questions.length) {
+                    currentQuestionIndex = 0;
+                }
+                
+                answered = selectedAnswers[currentQuestionIndex] !== null;
+
+                document.getElementById('databaseSelector').style.display = 'none';
+                document.getElementById('examContent').style.display = 'block';
+
+                displayQuestion();
+                updateStats();
+                
+                // Show success message with details
+                const progressMsg = `Progress restored!\n\nContinuing from Question ${currentQuestionIndex + 1} of ${questions.length}\nCurrent Score: ${stats.correct}/${stats.attempted}`;
+                
+                // Use visual notification instead of alert
+                const indicator = document.getElementById('saveIndicator');
+                indicator.textContent = '✓ Progress Restored!';
+                indicator.style.background = '#2196f3';
+                indicator.classList.add('show');
+                setTimeout(() => {
+                    indicator.classList.remove('show');
+                    setTimeout(() => {
+                        indicator.textContent = '✓ Progress Saved';
+                        indicator.style.background = '#4caf50';
+                    }, 300);
+                }, 3000);
+                
+            } catch (error) {
+                console.error('Resume error:', error);
+                alert('Could not load database: ' + filename + '\n\nPlease make sure the file is in the same directory.');
+            }
+        }
+
+        function loadDatabaseFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    
+                    if (!data.questions || !Array.isArray(data.questions)) {
+                        alert('Invalid JSON format. Please ensure the file contains a "questions" array.');
+                        return;
+                    }
+
+                    currentDatabaseName = file.name;
+                    loadDatabase(data);
+                } catch (error) {
+                    alert('Error parsing JSON file: ' + error.message);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function loadDatabase(data) {
+            currentDatabase = data;
+            questions = data.questions;
+            currentQuestionIndex = 0;
+            selectedAnswers = new Array(questions.length).fill(null);
+            answered = false;
+            stats = { correct: 0, incorrect: 0, attempted: 0 };
+
+            document.getElementById('databaseSelector').style.display = 'none';
+            document.getElementById('examContent').style.display = 'block';
+
+            displayQuestion();
+            updateStats();
+        }
+
+        function backToMenu() {
+            // Only ask about saving if user has made progress
+            if (stats.attempted > 0 && currentDatabaseName) {
+                const shouldSave = confirm('Do you want to save your progress before returning to the menu?\n\nClick OK to save, or Cancel to discard progress.');
+                
+                if (shouldSave) {
+                    saveProgress();
+                } else {
+                    // Clear saved progress if user chooses to discard
+                    localStorage.removeItem('exam_progress');
+                }
+                
+                // Save attempt statistics regardless
+                saveDatabaseStats(currentDatabaseName, stats.correct, stats.attempted);
+            } else {
+                // No progress made, just clear any old saved progress for this database
+                const saved = loadProgress();
+                if (saved && saved.databaseName === currentDatabaseName) {
+                    localStorage.removeItem('exam_progress');
+                }
+            }
+
+            document.getElementById('examContent').style.display = 'none';
+            document.getElementById('databaseSelector').style.display = 'block';
+            
+            // Refresh database cards to show updated stats
+            initializeDatabases();
+            
+            // Reset file input
+            document.getElementById('fileInput').value = '';
+        }
+
+        function displayQuestion() {
+            const question = questions[currentQuestionIndex];
+            answered = selectedAnswers[currentQuestionIndex] !== null;
+
+            document.getElementById('questionNumber').textContent = 
+                `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+            document.getElementById('questionTopic').textContent = question.topic || 'Topic 1';
+            document.getElementById('questionText').textContent = question.question;
+
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+
+            const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+            question.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option';
+                optionDiv.innerHTML = `
+                    <div class="option-letter">${letters[index]}.</div>
+                    <div class="option-text">${option}</div>
+                `;
+
+                if (answered) {
+                    optionDiv.classList.add('disabled');
+                    const userAnswer = selectedAnswers[currentQuestionIndex];
+                    const correctAnswer = question.correctAnswer;
+
+                    if (Array.isArray(correctAnswer)) {
+                        if (correctAnswer.includes(letters[index])) {
+                            optionDiv.classList.add('correct');
+                        }
+                        if (userAnswer && userAnswer.includes(letters[index])) {
+                            if (!correctAnswer.includes(letters[index])) {
+                                optionDiv.classList.add('incorrect');
+                            } else {
+                                optionDiv.classList.add('selected');
+                            }
+                        }
+                    } else {
+                        if (letters[index] === correctAnswer) {
+                            optionDiv.classList.add('correct');
+                        }
+                        if (letters[index] === userAnswer && userAnswer !== correctAnswer) {
+                            optionDiv.classList.add('incorrect');
+                        }
+                    }
+                } else {
+                    optionDiv.onclick = () => selectOption(letters[index]);
+                }
+
+                optionsContainer.appendChild(optionDiv);
+            });
+
+            if (answered) {
+                showFeedback();
+            } else {
+                document.getElementById('feedback').classList.remove('show');
+                document.getElementById('explanation').classList.remove('show');
+            }
+
+            // Only show community vote AFTER the question has been answered
+            if (answered && question.communityVote) {
+                const voteDiv = document.getElementById('communityVote');
+                voteDiv.style.display = 'block';
+                const distDiv = document.getElementById('voteDistribution');
+                distDiv.innerHTML = '';
+                
+                Object.entries(question.communityVote).forEach(([option, percentage]) => {
+                    const item = document.createElement('div');
+                    item.className = 'vote-item';
+                    item.textContent = `${option}: ${percentage}`;
+                    distDiv.appendChild(item);
+                });
+            } else {
+                document.getElementById('communityVote').style.display = 'none';
+            }
+
+            document.getElementById('prevButton').disabled = currentQuestionIndex === 0;
+            document.getElementById('nextButton').textContent = 
+                currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next →';
+
+            updateProgress();
+        }
+
+        function selectOption(letter) {
+            if (answered) return;
+
+            const question = questions[currentQuestionIndex];
+            const isMultipleChoice = Array.isArray(question.correctAnswer);
+
+            if (isMultipleChoice) {
+                if (!selectedAnswers[currentQuestionIndex]) {
+                    selectedAnswers[currentQuestionIndex] = [];
+                }
+                const selected = selectedAnswers[currentQuestionIndex];
+                const index = selected.indexOf(letter);
+                
+                if (index > -1) {
+                    selected.splice(index, 1);
+                } else {
+                    selected.push(letter);
+                }
+
+                const options = document.querySelectorAll('.option');
+                options.forEach((opt, idx) => {
+                    const optLetter = ['A', 'B', 'C', 'D', 'E', 'F'][idx];
+                    if (selected.includes(optLetter)) {
+                        opt.classList.add('selected');
+                    } else {
+                        opt.classList.remove('selected');
+                    }
+                });
+
+                if (selected.length === question.correctAnswer.length) {
+                    setTimeout(() => submitAnswer(), 300);
+                }
+            } else {
+                selectedAnswers[currentQuestionIndex] = letter;
+                submitAnswer();
+            }
+        }
+
+        function submitAnswer() {
+            answered = true;
+            stats.attempted++;
+
+            const question = questions[currentQuestionIndex];
+            const userAnswer = selectedAnswers[currentQuestionIndex];
+            const correctAnswer = question.correctAnswer;
+
+            let isCorrect = false;
+            if (Array.isArray(correctAnswer)) {
+                isCorrect = JSON.stringify(userAnswer.sort()) === JSON.stringify(correctAnswer.sort());
+            } else {
+                isCorrect = userAnswer === correctAnswer;
+            }
+
+            if (isCorrect) {
+                stats.correct++;
+            } else {
+                stats.incorrect++;
+            }
+
+            updateStats();
+            displayQuestion();
+        }
+
+        function showFeedback() {
+            const question = questions[currentQuestionIndex];
+            const userAnswer = selectedAnswers[currentQuestionIndex];
+            const correctAnswer = question.correctAnswer;
+
+            let isCorrect = false;
+            if (Array.isArray(correctAnswer)) {
+                isCorrect = JSON.stringify(userAnswer.sort()) === JSON.stringify(correctAnswer.sort());
+            } else {
+                isCorrect = userAnswer === correctAnswer;
+            }
+
+            const feedbackDiv = document.getElementById('feedback');
+            feedbackDiv.className = 'feedback show ' + (isCorrect ? 'correct' : 'incorrect');
+            feedbackDiv.innerHTML = isCorrect 
+                ? '✓ Correct! Well done.' 
+                : `✗ Incorrect. The correct answer is ${Array.isArray(correctAnswer) ? correctAnswer.join(', ') : correctAnswer}.`;
+
+            if (question.explanation) {
+                document.getElementById('explanationText').textContent = question.explanation;
+                document.getElementById('explanation').classList.add('show');
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                answered = false;
+                displayQuestion();
+            } else {
+                // End of exam - save stats and clear progress
+                if (currentDatabaseName) {
+                    saveDatabaseStats(currentDatabaseName, stats.correct, stats.attempted);
+                    // Clear saved progress since exam is complete
+                    localStorage.removeItem('exam_progress');
+                }
+                
+                const percentage = Math.round((stats.correct / stats.attempted) * 100);
+                if (confirm(`🎉 Exam Complete!\n\nScore: ${percentage}%\nCorrect: ${stats.correct} / ${stats.attempted}\n\nWould you like to return to the database menu?`)) {
+                    backToMenu();
+                }
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                answered = false;
+                displayQuestion();
+            }
+        }
+
+        function updateProgress() {
+            const total = questions.length;
+            const answered = selectedAnswers.filter(a => a !== null).length;
+            const percentage = (answered / total) * 100;
+
+            document.getElementById('progressText').textContent = `${answered} / ${total}`;
+            document.getElementById('progressFill').style.width = percentage + '%';
+        }
+
+        function updateStats() {
+            document.getElementById('correctCount').textContent = stats.correct;
+            document.getElementById('incorrectCount').textContent = stats.incorrect;
+            
+            const percentage = stats.attempted > 0 
+                ? Math.round((stats.correct / stats.attempted) * 100) 
+                : 0;
+            document.getElementById('scorePercent').textContent = percentage + '%';
+        }
+
+        // Initialize on page load
+        initializeDatabases();
+
+        // Reset Functions
+        function showResetMenu() {
+            document.getElementById('resetModal').classList.add('show');
+        }
+
+        function closeResetMenu() {
+            document.getElementById('resetModal').classList.remove('show');
+        }
+
+        function resetSavedProgress() {
+            if (confirm('⚠️ Are you sure you want to clear your saved progress?\n\nThis will remove your current exam position but keep your statistics.')) {
+                localStorage.removeItem('exam_progress');
+                closeResetMenu();
+                
+                // Show notification
+                const indicator = document.getElementById('saveIndicator');
+                indicator.textContent = '✓ Progress Cleared';
+                indicator.style.background = '#ff9800';
+                indicator.classList.add('show');
+                setTimeout(() => {
+                    indicator.classList.remove('show');
+                    setTimeout(() => {
+                        indicator.textContent = '✓ Progress Saved';
+                        indicator.style.background = '#4caf50';
+                    }, 300);
+                }, 2000);
+                
+                // Refresh display if on database selector
+                if (document.getElementById('databaseSelector').style.display !== 'none') {
+                    initializeDatabases();
+                }
+            }
+        }
+
+        function resetAllStatistics() {
+            if (confirm('⚠️ Are you sure you want to reset ALL statistics?\n\nThis will clear:\n• All attempt counts\n• All scores\n• All correct answer totals\n\nThis action cannot be undone!')) {
+                // Get all keys that start with 'exam_stats_'
+                const keys = Object.keys(localStorage);
+                keys.forEach(key => {
+                    if (key.startsWith('exam_stats_')) {
+                        localStorage.removeItem(key);
+                    }
+                });
+                
+                closeResetMenu();
+                
+                // Show notification
+                const indicator = document.getElementById('saveIndicator');
+                indicator.textContent = '✓ Statistics Reset';
+                indicator.style.background = '#f44336';
+                indicator.classList.add('show');
+                setTimeout(() => {
+                    indicator.classList.remove('show');
+                    setTimeout(() => {
+                        indicator.textContent = '✓ Progress Saved';
+                        indicator.style.background = '#4caf50';
+                    }, 300);
+                }, 2000);
+                
+                // Refresh database cards
+                if (document.getElementById('databaseSelector').style.display !== 'none') {
+                    initializeDatabases();
+                }
+            }
+        }
+
+        function resetEverything() {
+            if (confirm('⚠️ WARNING: Reset Everything?\n\nThis will permanently delete:\n• All saved progress\n• All attempt statistics\n• All scores and history\n\nThis action CANNOT be undone!\n\nAre you absolutely sure?')) {
+                // Double confirmation for safety
+                if (confirm('⚠️ FINAL WARNING\n\nThis is your last chance to cancel.\n\nClick OK to permanently delete all data.')) {
+                    // Clear all exam-related data
+                    const keys = Object.keys(localStorage);
+                    keys.forEach(key => {
+                        if (key.startsWith('exam_stats_') || key === 'exam_progress') {
+                            localStorage.removeItem(key);
+                        }
+                    });
+                    
+                    closeResetMenu();
+                    
+                    // Show notification
+                    const indicator = document.getElementById('saveIndicator');
+                    indicator.textContent = '✓ All Data Cleared';
+                    indicator.style.background = '#9c27b0';
+                    indicator.classList.add('show');
+                    setTimeout(() => {
+                        indicator.classList.remove('show');
+                        setTimeout(() => {
+                            indicator.textContent = '✓ Progress Saved';
+                            indicator.style.background = '#4caf50';
+                        }, 300);
+                    }, 3000);
+                    
+                    // Refresh database cards
+                    if (document.getElementById('databaseSelector').style.display !== 'none') {
+                        initializeDatabases();
+                    }
+                    
+                    // If in exam, go back to menu
+                    if (document.getElementById('examContent').style.display !== 'none') {
+                        document.getElementById('examContent').style.display = 'none';
+                        document.getElementById('databaseSelector').style.display = 'block';
+                        initializeDatabases();
+                    }
+                }
+            }
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('resetModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeResetMenu();
+            }
+        });
+    </script>
+</body>
+</html>
