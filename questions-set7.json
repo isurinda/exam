@@ -1,0 +1,841 @@
+{
+  "title": "ISC2 CISSP Practice Questions - Set 7 (Q301-350)",
+  "description": "Advanced CISSP certification exam practice questions",
+  "questions": [
+    {
+      "id": 301,
+      "topic": "Topic 1",
+      "question": "An information security professional is reviewing user access controls on a customer-facing application. The application must have multi-factor authentication (MFA) in place. The application currently requires a username and password to login. Which of the following options would BEST implement MFA?",
+      "options": [
+        "Geolocate the user and compare to previous logins",
+        "Require a pre-selected number as part of the login",
+        "Have the user answer a secret question that is known to them",
+        "Enter an automatically generated number from a hardware token"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Hardware tokens generate time-based one-time passwords (TOTP), providing true multi-factor authentication by combining something you know (password) with something you have (token).",
+      "communityVote": {
+        "D": "97%",
+        "Other": "3%"
+      }
+    },
+    {
+      "id": 302,
+      "topic": "Topic 1",
+      "question": "Which of the following is a MAJOR consideration in implementing a Voice over Internet Protocol (VoIP) network?",
+      "options": [
+        "Use of Request for Comments (RFC) 1918 addressing",
+        "Use of Network Access Control (NAC) on switches",
+        "Use of separation for the voice network",
+        "Use of a unified messaging"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Separating voice and data networks through VLANs or physical separation ensures quality of service (QoS) for voice traffic and provides security isolation.",
+      "communityVote": {
+        "C": "100%"
+      }
+    },
+    {
+      "id": 303,
+      "topic": "Topic 1",
+      "question": "During testing, where are the requirements to inform parent organizations, law enforcement, and a computer incident response team documented?",
+      "options": [
+        "Security Assessment Report (SAR)",
+        "Security assessment plan",
+        "Unit test results",
+        "System integration plan"
+      ],
+      "correctAnswer": "B",
+      "explanation": "The security assessment plan documents procedures, including notification requirements for incidents discovered during testing.",
+      "communityVote": {
+        "B": "100%"
+      }
+    },
+    {
+      "id": 304,
+      "topic": "Topic 1",
+      "question": "The security architect has been mandated to assess the security of various brands of mobile devices. At what phase of the product lifecycle would this be MOST likely to occur?",
+      "options": [
+        "Implementation",
+        "Operations and maintenance",
+        "Disposal",
+        "Development"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Security assessments of mobile device brands occur during the development/acquisition phase when selecting devices for organizational use.",
+      "communityVote": {
+        "D": "54%",
+        "A": "46%"
+      }
+    },
+    {
+      "id": 305,
+      "topic": "Topic 1",
+      "question": "Which of the following statements is MOST accurate regarding information assets?",
+      "options": [
+        "International Organization for Standardization (ISO) 27001 compliance specifies which information assets must be included in asset inventory",
+        "Information assets include any information that is valuable to the organization",
+        "Building an information assets register is a resource-intensive job",
+        "Information assets inventory is not required for risk assessment"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Information assets are defined as any information that has value to the organization, regardless of format or storage method.",
+      "communityVote": {
+        "B": "88%",
+        "Other": "12%"
+      }
+    },
+    {
+      "id": 306,
+      "topic": "Topic 1",
+      "question": "Which of the following attack types can be used to compromise the integrity of data during transmission?",
+      "options": [
+        "Synchronization flooding",
+        "Session hijacking",
+        "Keylogging",
+        "Packet sniffing"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Session hijacking allows attackers to intercept and modify data in transit by taking over an active session, compromising data integrity.",
+      "communityVote": {
+        "B": "90%",
+        "Other": "10%"
+      }
+    },
+    {
+      "id": 307,
+      "topic": "Topic 1",
+      "question": "A malicious user gains access to unprotected directories on a web server. Which of the following is MOST likely the cause for this information disclosure?",
+      "options": [
+        "Broken authentication management",
+        "Security misconfiguration",
+        "Cross-site request forgery (CSRF)",
+        "Structured Query Language injection (SQLi)"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Security misconfiguration, such as improper directory permissions or default settings, commonly allows unauthorized access to web server directories.",
+      "communityVote": {
+        "B": "100%"
+      }
+    },
+    {
+      "id": 308,
+      "topic": "Topic 1",
+      "question": "When reviewing the security logs, the password shown for an administrative login event was ' OR ' '1'='1' --. This is an example of which of the following kinds of attack?",
+      "options": [
+        "Structured Query Language (SQL) Injection",
+        "Brute Force Attack",
+        "Rainbow Table Attack",
+        "Cross-Site Scripting (XSS)"
+      ],
+      "correctAnswer": "A",
+      "explanation": "The string ' OR '1'='1' -- is a classic SQL injection payload that attempts to bypass authentication by always evaluating to true.",
+      "communityVote": {
+        "A": "100%"
+      }
+    },
+    {
+      "id": 309,
+      "topic": "Topic 1",
+      "question": "Which is the BEST control to meet the Statement on Standards for Attestation Engagements 18 (SSAE-18) confidentiality category?",
+      "options": [
+        "File hashing",
+        "Storage encryption",
+        "Data retention policy",
+        "Data processing"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Storage encryption protects data confidentiality by ensuring unauthorized parties cannot read sensitive information even if they gain access to storage media.",
+      "communityVote": {
+        "B": "100%"
+      }
+    },
+    {
+      "id": 310,
+      "topic": "Topic 1",
+      "question": "Which of the following BEST describes why software assurance is critical in helping prevent an increase in business and mission risk for an organization?",
+      "options": [
+        "Request for proposals (RFP) avoid purchasing software that does not meet business needs",
+        "Contracting processes eliminate liability for security vulnerabilities for the purchaser",
+        "Decommissioning of old software reduces long-term costs related to technical debt",
+        "Software that does not perform as intended may be exploitable which makes it vulnerable to attack"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Software assurance ensures software functions correctly and securely. Poorly performing software may contain vulnerabilities that can be exploited, increasing organizational risk.",
+      "communityVote": {
+        "D": "100%"
+      }
+    },
+    {
+      "id": 311,
+      "topic": "Topic 1",
+      "question": "An employee's home address should be categorized according to which of the following references?",
+      "options": [
+        "The consent form terms and conditions signed by employees",
+        "An organization security plan for human resources",
+        "Existing employee data classifications",
+        "The organization's data classification model"
+      ],
+      "correctAnswer": "D",
+      "explanation": "All data, including employee personal information like home addresses, should be categorized according to the organization's formal data classification model.",
+      "communityVote": {
+        "D": "100%"
+      }
+    },
+    {
+      "id": 312,
+      "topic": "Topic 1",
+      "question": "Which of the following activities should a forensic examiner perform FIRST when determining the priority of digital evidence collection at a crime scene?",
+      "options": [
+        "Gather physical evidence",
+        "Assign responsibilities to personnel on the scene",
+        "Establish a list of files to examine",
+        "Establish order of volatility"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Order of volatility determines which evidence should be collected first. Volatile data (RAM, network connections) must be captured before less volatile data (hard drives).",
+      "communityVote": {
+        "D": "100%"
+      }
+    },
+    {
+      "id": 313,
+      "topic": "Topic 1",
+      "question": "Which software defined networking (SDN) architectural component is responsible for translating network requirements?",
+      "options": [
+        "SDN Controller",
+        "SDN Datapath",
+        "SDN Northbound Interfaces",
+        "SDN Application"
+      ],
+      "correctAnswer": "A",
+      "explanation": "The SDN Controller translates high-level network policies and requirements from applications into low-level forwarding rules for network devices.",
+      "communityVote": {
+        "A": "73%",
+        "C": "27%"
+      }
+    },
+    {
+      "id": 314,
+      "topic": "Topic 1",
+      "question": "An internal audit for an organization recently identified malicious actions by a user account. Upon further investigation, it was determined the offending user account was used by multiple people at multiple locations simultaneously for various services and applications. What is the BEST method to prevent this problem in the future?",
+      "options": [
+        "Ensure each user has their own unique account",
+        "Allow several users to share a generic account",
+        "Ensure the security information and event management (SIEM) is set to alert",
+        "Inform users only one user should be using the account at a time"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Unique individual accounts ensure accountability and traceability, preventing shared account abuse and enabling proper access control and auditing.",
+      "communityVote": {
+        "A": "78%",
+        "C": "22%"
+      }
+    },
+    {
+      "id": 315,
+      "topic": "Topic 1",
+      "question": "Who should perform the design review to uncover security design flaws as part of the Software Development Life Cycle (SDLC)?",
+      "options": [
+        "A security subject matter expert (SME)",
+        "A developer subject matter expert (SME)",
+        "The business owner",
+        "The application owner"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Security SMEs have the specialized knowledge to identify security design flaws and recommend appropriate controls during SDLC design reviews.",
+      "communityVote": {
+        "A": "100%"
+      }
+    },
+    {
+      "id": 316,
+      "topic": "Topic 1",
+      "question": "The initial security categorization should be done early in the system life cycle and should be reviewed periodically. Why is it important for this to be done correctly?",
+      "options": [
+        "It determines the functional and operational requirements",
+        "It determines the security requirements",
+        "It affects other steps in the certification and accreditation process",
+        "The system engineering process works with selected security controls"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Security categorization determines the appropriate level of security controls and requirements based on the system's confidentiality, integrity, and availability needs.",
+      "communityVote": {
+        "B": "90%",
+        "Other": "10%"
+      }
+    },
+    {
+      "id": 317,
+      "topic": "Topic 1",
+      "question": "When designing a Cyber-Physical System (CPS), which of the following should be a security practitioner's first consideration?",
+      "options": [
+        "Detection of sophisticated attackers",
+        "Topology of the network used for the system",
+        "Risk assessment of the system",
+        "Resiliency of the system"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Risk assessment must come first to understand threats, vulnerabilities, and potential impacts, which then inform all other security design decisions for the CPS.",
+      "communityVote": {
+        "C": "69%",
+        "D": "31%"
+      }
+    },
+    {
+      "id": 318,
+      "topic": "Topic 1",
+      "question": "Which of the following events prompts a review of the disaster recovery plan (DRP)?",
+      "options": [
+        "Change in senior management",
+        "Completion of the security policy review",
+        "Organizational merger",
+        "New members added to the steering committee"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Organizational mergers significantly change business processes, infrastructure, and recovery requirements, necessitating a complete DRP review and update.",
+      "communityVote": {
+        "C": "100%"
+      }
+    },
+    {
+      "id": 319,
+      "topic": "Topic 1",
+      "question": "A user is allowed to access the file labeled 'Financial Forecast,' but only between 9:00 a.m. and 5:00 p.m., Monday through Friday. Which type of access mechanism should be used to accomplish this?",
+      "options": [
+        "Minimum access control",
+        "Limited role-based access control (RBAC)",
+        "Access control list (ACL)",
+        "Rule-based access control"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Rule-based access control enforces access based on conditions like time of day and day of week, enabling temporal access restrictions.",
+      "communityVote": {
+        "D": "88%",
+        "Other": "12%"
+      }
+    },
+    {
+      "id": 320,
+      "topic": "Topic 1",
+      "question": "What is the benefit of using Network Admission Control (NAC)?",
+      "options": [
+        "NAC only supports Windows operating systems (OS)",
+        "NAC supports validation of the endpoint's security posture prior to allowing the session to go into an authorized state",
+        "NAC can require the use of certificates, passwords, or a combination of both before allowing network admission",
+        "Operating system (OS) versions can be validated prior to allowing network access"
+      ],
+      "correctAnswer": "B",
+      "explanation": "NAC's primary benefit is validating endpoint security posture (patches, antivirus, compliance) before granting network access, ensuring only secure devices connect.",
+      "communityVote": {
+        "B": "97%",
+        "Other": "3%"
+      }
+    },
+    {
+      "id": 321,
+      "topic": "Topic 1",
+      "question": "When MUST an organization's information security strategic plan be reviewed?",
+      "options": [
+        "Whenever there are major changes to the business",
+        "Quarterly, when the organization's strategic plan is updated",
+        "Every three years, when the organization's strategic plan is updated",
+        "Whenever there are significant changes to a major application"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Major business changes (mergers, new products, market shifts) require security strategy review to ensure alignment with new business objectives and risks.",
+      "communityVote": {
+        "A": "91%",
+        "Other": "9%"
+      }
+    },
+    {
+      "id": 322,
+      "topic": "Topic 1",
+      "question": "An established information technology (IT) consulting firm is considering acquiring a successful local startup. To gain a comprehensive understanding of the startup's security posture, which type of assessment provides the BEST information?",
+      "options": [
+        "A security audit",
+        "A tabletop exercise",
+        "A penetration test",
+        "A security threat model"
+      ],
+      "correctAnswer": "A",
+      "explanation": "A security audit provides comprehensive assessment of policies, procedures, controls, and compliance, offering complete visibility into the organization's security posture.",
+      "communityVote": {
+        "A": "100%"
+      }
+    },
+    {
+      "id": 323,
+      "topic": "Topic 1",
+      "question": "An organization plans to acquire a commercial off-the-shelf (COTS) system to replace their aging home-built reporting system. When should the organization's security team FIRST get involved in this acquisition's life cycle?",
+      "options": [
+        "When the system is verified and validated",
+        "When the need for a system is expressed and the purpose of the system is documented",
+        "When the system is deployed into production",
+        "When the system is being designed, purchased, programmed, developed, or otherwise constructed"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Security should be involved from the very beginning when requirements are defined, ensuring security needs are included in system selection criteria.",
+      "communityVote": {
+        "B": "100%"
+      }
+    },
+    {
+      "id": 324,
+      "topic": "Topic 1",
+      "question": "Which of the following is a PRIMARY security weakness in the design of Domain Name System (DNS)?",
+      "options": [
+        "Each DNS server must hold the address of the root servers",
+        "A DNS server can be disabled in a denial-of-service (DoS) attack",
+        "A DNS server does not authenticate source of information",
+        "A DNS server database can be injected with falsified checksums"
+      ],
+      "correctAnswer": "C",
+      "explanation": "DNS lacks authentication of information sources, allowing cache poisoning attacks where malicious DNS data can be injected and accepted without verification.",
+      "communityVote": {
+        "C": "85%",
+        "B": "15%"
+      }
+    },
+    {
+      "id": 325,
+      "topic": "Topic 1",
+      "question": "To minimize the vulnerabilities of a web-based application, which of the following FIRST actions will lock down the system and minimize the risk of an attack?",
+      "options": [
+        "Apply the latest vendor patches and updates",
+        "Run a vulnerability scanner",
+        "Review access controls",
+        "Install an antivirus on the server"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Applying patches addresses known vulnerabilities immediately, providing the most direct risk reduction before implementing additional security measures.",
+      "communityVote": {
+        "A": "69%",
+        "C": "31%"
+      }
+    },
+    {
+      "id": 326,
+      "topic": "Topic 1",
+      "question": "An organization has implemented a password complexity and an account lockout policy enforcing five incorrect logins tries within ten minutes. Network users have reported significantly increased account lockouts. Which of the following security principles is this company affecting?",
+      "options": [
+        "Confidentiality",
+        "Integrity",
+        "Availability",
+        "Authentication"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Aggressive lockout policies impact availability by preventing legitimate users from accessing systems, even though the intent is to improve security.",
+      "communityVote": {
+        "C": "67%",
+        "B": "17%",
+        "A": "16%"
+      }
+    },
+    {
+      "id": 327,
+      "topic": "Topic 1",
+      "question": "In the last 15 years a company has experienced three electrical failures. The cost associated with each failure is listed below. Which of the following would be a reasonable annual loss expectation?",
+      "options": [
+        "3,500",
+        "140,000",
+        "14,000",
+        "350,000"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Annual Loss Expectancy (ALE) is calculated by dividing total loss by years. If 3 failures over 15 years totaled approximately $210,000, ALE = $210,000 / 15 = $14,000.",
+      "communityVote": {
+        "C": "100%"
+      }
+    },
+    {
+      "id": 328,
+      "topic": "Topic 1",
+      "question": "A security practitioner has been asked to model best practices for disaster recovery (DR) and business continuity. The practitioner has decided that a formal committee is needed to establish a business continuity policy. Which of the following BEST describes this stage of business continuity development?",
+      "options": [
+        "Developing and Implementing business continuity plans (BCP)",
+        "Project Initiation and Management",
+        "Risk Evaluation and Control",
+        "Business impact analysis (BIA)"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Establishing a committee and formal policy represents the Project Initiation and Management phase of business continuity planning.",
+      "communityVote": {
+        "B": "95%",
+        "Other": "5%"
+      }
+    },
+    {
+      "id": 329,
+      "topic": "Topic 1",
+      "question": "What physical characteristic does a retinal scan biometric device measure?",
+      "options": [
+        "The amount of light reflected by the retina",
+        "The pattern of blood vessels at the back of the eye",
+        "The size, curvature, and shape of the retina",
+        "The pattern of light receptors at the back of the eye"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Retinal scans measure the unique pattern of blood vessels at the back of the eye, which remains stable throughout a person's life.",
+      "communityVote": {
+        "B": "100%"
+      }
+    },
+    {
+      "id": 330,
+      "topic": "Topic 1",
+      "question": "Which of the following BEST represents a defense in depth concept?",
+      "options": [
+        "Network-based data loss prevention (DLP), Network Access Control (NAC), network-based Intrusion prevention system (NIPS), Port security on core switches",
+        "Host-based data loss prevention (DLP), Endpoint anti-malware solution, Host-based integrity checker, Laptop locks, hard disk drive (HDD) encryption",
+        "Endpoint security management, network intrusion detection system (NIDS), Network Access Control (NAC), Privileged Access Management (PAM), security information and event management (SIEM)",
+        "Web application firewall (WAF), Gateway network device tuning, Database firewall, Next-Generation Firewall (NGFW), Tier-2 demilitarized zone (DMZ) tuning"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Defense in depth requires multiple layers across different security domains. Option C includes endpoint, network, access management, and monitoring - representing true layered security.",
+      "communityVote": {
+        "C": "75%",
+        "B": "19%",
+        "Other": "6%"
+      }
+    },
+    {
+      "id": 331,
+      "topic": "Topic 1",
+      "question": "Which of the following is required to verify the authenticity of a digitally signed document?",
+      "options": [
+        "Agreed upon shared secret",
+        "Digital hash of the signed document",
+        "Recipient's public key",
+        "Sender's private key"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Verifying a digital signature requires computing the hash of the document and comparing it with the decrypted signature using the sender's public key.",
+      "communityVote": {
+        "B": "50%",
+        "C": "37%",
+        "Other": "13%"
+      }
+    },
+    {
+      "id": 332,
+      "topic": "Topic 1",
+      "question": "Which of the following contributes MOST to the effectiveness of a security officer?",
+      "options": [
+        "Developing precise and practical security plans",
+        "Integrating security into the business strategies",
+        "Understanding the regulatory environment",
+        "Analyzing the strengths and weakness of the organization"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Integrating security into business strategy ensures security supports and enables business objectives, making security a business enabler rather than obstacle.",
+      "communityVote": {
+        "B": "91%",
+        "Other": "9%"
+      }
+    },
+    {
+      "id": 333,
+      "topic": "Topic 1",
+      "question": "Where can the Open Web Application Security Project (OWASP) list of associated vulnerabilities be found?",
+      "options": [
+        "OWASP Mobile Project",
+        "OWASP Software Assurance Maturity Model (SAMM) Project",
+        "OWASP Guide Project",
+        "OWASP Top 10 Project"
+      ],
+      "correctAnswer": "D",
+      "explanation": "The OWASP Top 10 Project provides a regularly updated list of the most critical web application security vulnerabilities and risks.",
+      "communityVote": {
+        "D": "100%"
+      }
+    },
+    {
+      "id": 334,
+      "topic": "Topic 1",
+      "question": "Employee training, risk management, and data handling procedures and policies could be characterized as which type of security measure?",
+      "options": [
+        "Preventative",
+        "Management",
+        "Non-essential",
+        "Administrative"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Administrative controls include policies, procedures, training, and risk management - governance mechanisms that guide security implementation.",
+      "communityVote": {
+        "D": "72%",
+        "A": "28%"
+      }
+    },
+    {
+      "id": 335,
+      "topic": "Topic 1",
+      "question": "A hospital's building controls system monitors and operates the environmental equipment to maintain a safe and comfortable environment. Which of the following could be used to minimize the risk of utility supply interruption?",
+      "options": [
+        "Digital protection and control devices capable of minimizing the adverse impact to critical utility",
+        "Standardized building controls system software with high connectivity to hospital networks",
+        "Lock out maintenance personnel from the building controls system access that can impact critical utility supplies",
+        "Digital devices that can turn equipment off and continuously cycle rapidly in order to increase supplies and conceal activity on the hospital network"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Digital protection devices can monitor utility systems and automatically respond to prevent or minimize disruptions to critical utilities.",
+      "communityVote": {
+        "A": "100%"
+      }
+    },
+    {
+      "id": 336,
+      "topic": "Topic 1",
+      "question": "Which of the following statements BEST distinguishes a stateful packet inspection firewall from a stateless packet filter firewall?",
+      "options": [
+        "The SPI inspects traffic on a packet-by-packet basis",
+        "The SPI inspects the flags on Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) packets",
+        "The SPI is capable of dropping packets based on a pre-defined rule set",
+        "The SPI inspects the traffic in the context of a session"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Stateful packet inspection tracks the state of network connections and makes decisions based on connection context, not just individual packets.",
+      "communityVote": {
+        "D": "100%"
+      }
+    },
+    {
+      "id": 337,
+      "topic": "Topic 1",
+      "question": "What is the MAIN purpose of conducting a business impact analysis (BIA)?",
+      "options": [
+        "To determine the cost for restoration of damaged information system",
+        "To determine the controls required to return to business critical operations",
+        "To determine the critical resources required to recover from an incident within a specified time period",
+        "To determine the effect of mission-critical information system failures on core business processes"
+      ],
+      "correctAnswer": "D",
+      "explanation": "BIA identifies and evaluates the potential effects of disruptions to critical business operations, determining impact on business processes.",
+      "communityVote": {
+        "D": "83%",
+        "C": "17%"
+      }
+    },
+    {
+      "id": 338,
+      "topic": "Topic 1",
+      "question": "Which algorithm gets its security from the difficulty of calculating discrete logarithms in a finite field and is used to distribute keys, but cannot be used to encrypt or decrypt messages?",
+      "options": [
+        "Kerberos",
+        "Digital Signature Algorithm (DSA)",
+        "Diffie-Hellman",
+        "Rivest-Shamir-Adleman (RSA)"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Diffie-Hellman is a key exchange protocol based on discrete logarithms that establishes shared secrets but does not encrypt data directly.",
+      "communityVote": {
+        "C": "93%",
+        "Other": "7%"
+      }
+    },
+    {
+      "id": 339,
+      "topic": "Topic 1",
+      "question": "Which of the following is established to collect information in accordance with pre-established metrics, utilizing information readily available in part through implemented security controls?",
+      "options": [
+        "Security Assessment Report (SAR)",
+        "Organizational risk tolerance",
+        "Risk assessment report",
+        "Information Security Continuous Monitoring (ISCM)"
+      ],
+      "correctAnswer": "D",
+      "explanation": "ISCM continuously collects security-related information using established metrics from deployed controls to maintain ongoing awareness of security posture.",
+      "communityVote": {
+        "D": "95%",
+        "Other": "5%"
+      }
+    },
+    {
+      "id": 340,
+      "topic": "Topic 1",
+      "question": "When conducting a remote access session using Internet Protocol Security (IPSec), which Open Systems Interconnection (OSI) model layer does this connection use?",
+      "options": [
+        "Presentation",
+        "Transport",
+        "Network",
+        "Data link"
+      ],
+      "correctAnswer": "C",
+      "explanation": "IPSec operates at the Network layer (Layer 3) of the OSI model, securing IP packets for remote access VPN connections.",
+      "communityVote": {
+        "C": "100%"
+      }
+    },
+    {
+      "id": 341,
+      "topic": "Topic 1",
+      "question": "Which of the following is the MOST effective corrective control to minimize the effects of a physical intrusion?",
+      "options": [
+        "Rapid response by guards or police to apprehend a possible intruder",
+        "Sounding a loud alarm to frighten away a possible intruder",
+        "Automatic videotaping of a possible intrusion",
+        "Activating bright lighting to frighten away a possible intruder"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Rapid response to apprehend intruders is a corrective control that actively minimizes damage by stopping the intrusion in progress.",
+      "communityVote": {
+        "A": "95%",
+        "Other": "5%"
+      }
+    },
+    {
+      "id": 342,
+      "topic": "Topic 1",
+      "question": "Which of the following are the three MAIN categories of security controls?",
+      "options": [
+        "Preventative, corrective, detective",
+        "Administrative, technical, physical",
+        "Corrective, detective, recovery",
+        "Confidentiality, integrity, availability"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Security controls are categorized by implementation type: Administrative (policies/procedures), Technical (software/hardware), and Physical (tangible barriers).",
+      "communityVote": {
+        "B": "85%",
+        "A": "15%"
+      }
+    },
+    {
+      "id": 343,
+      "topic": "Topic 1",
+      "question": "Which is the PRIMARY mechanism for providing the workforce with the information needed to protect an agency's vital information resources?",
+      "options": [
+        "Implementation of access provisioning process for coordinating the creation of user accounts",
+        "Incorporating security awareness and training as part of the overall information security program",
+        "An information technology (IT) security policy to preserve the confidentiality, integrity, and availability of systems",
+        "Execution of periodic security and privacy assessments to the organization"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Security awareness and training is the primary mechanism for educating the workforce about security threats, policies, and best practices.",
+      "communityVote": {
+        "B": "72%",
+        "C": "28%"
+      }
+    },
+    {
+      "id": 344,
+      "topic": "Topic 1",
+      "question": "Which of the following is considered the FIRST step when designing an internal security control assessment?",
+      "options": [
+        "Create a plan based on comprehensive knowledge of known breaches",
+        "Create a plan based on reconnaissance of the organization's infrastructure",
+        "Create a plan based on a recognized framework of known controls",
+        "Create a plan based on recent vulnerability scans of the systems in question"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Starting with a recognized control framework (NIST, ISO, CIS) ensures comprehensive coverage and industry best practices in the assessment plan.",
+      "communityVote": {
+        "C": "47%",
+        "B": "45%",
+        "Other": "8%"
+      }
+    },
+    {
+      "id": 345,
+      "topic": "Topic 1",
+      "question": "The Open Web Application Security Project's (OWASP) Software Assurance Maturity Model (SAMM) allows organizations to implement a flexible software security strategy to measure organizational impact based on what risk management aspect?",
+      "options": [
+        "Risk exception",
+        "Risk tolerance",
+        "Risk treatment",
+        "Risk response"
+      ],
+      "correctAnswer": "B",
+      "explanation": "SAMM enables organizations to tailor security activities based on their risk tolerance, allowing flexible implementation aligned with organizational risk appetite.",
+      "communityVote": {
+        "B": "50%",
+        "D": "29%",
+        "C": "21%"
+      }
+    },
+    {
+      "id": 346,
+      "topic": "Topic 1",
+      "question": "Match the roles for an external audit to the appropriate responsibilities. (Drag and Drop question - matching roles to responsibilities)",
+      "options": [
+        "This is a drag-and-drop matching question",
+        "Roles and responsibilities must be matched correctly",
+        "See exam interface for interactive matching",
+        "Answer depends on specific role-responsibility pairs"
+      ],
+      "correctAnswer": "A",
+      "explanation": "This is an interactive question type where audit roles (Lead Auditor, Audit Team Member, Auditee, etc.) must be matched to their corresponding responsibilities.",
+      "communityVote": {
+        "A": "100%"
+      }
+    },
+    {
+      "id": 347,
+      "topic": "Topic 1",
+      "question": "What is the PRIMARY reason that a bit-level copy is more desirable than a file-level copy when replicating a hard drives contents for an e-discovery investigation?",
+      "options": [
+        "The corruption of files is less likely",
+        "Files that have been deleted will be transferred",
+        "The file and directory structure is retained",
+        "File-level security settings will be preserved"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Bit-level (forensic) copies capture all data including deleted files, slack space, and unallocated space, essential for complete forensic investigation.",
+      "communityVote": {
+        "B": "100%"
+      }
+    },
+    {
+      "id": 348,
+      "topic": "Topic 1",
+      "question": "An organization outgrew its internal data center and is evaluating third-party hosting facilities. In this evaluation, which of the following is a PRIMARY factor for selection?",
+      "options": [
+        "Facility provides an acceptable level of risk",
+        "Facility provides disaster recovery (DR) services",
+        "Facility has physical access protection measures",
+        "Facility provides the most cost-effective solution"
+      ],
+      "correctAnswer": "A",
+      "explanation": "The primary factor is whether the facility's risk level is acceptable to the organization, encompassing security, availability, and compliance considerations.",
+      "communityVote": {
+        "A": "65%",
+        "D": "35%"
+      }
+    },
+    {
+      "id": 349,
+      "topic": "Topic 1",
+      "question": "A large manufacturing organization arranges to buy an industrial machine system to produce a new line of products. The system includes software provided to the vendor by a third-party organization. The financial risk to the manufacturing organization starting production is high. What step should the manufacturing organization take to minimize its financial risk in the new venture prior to the purchase?",
+      "options": [
+        "Require that the software be thoroughly tested by an accredited independent software testing company",
+        "Hire a performance tester to execute offline tests on a system",
+        "Calculate the possible loss in revenue to the organization due to software bugs and vulnerabilities, and compare that to the system's overall price",
+        "Place the machine behind a Layer 3 firewall"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Independent software testing verifies quality and identifies issues before purchase, reducing financial risk from production delays or failures due to software problems.",
+      "communityVote": {
+        "A": "59%",
+        "C": "41%"
+      }
+    },
+    {
+      "id": 350,
+      "topic": "Topic 1",
+      "question": "Which of the following is the BEST method a security practitioner can use to ensure that systems and sub-systems gracefully handle invalid input?",
+      "options": [
+        "Unit testing",
+        "Acceptance testing",
+        "Integration testing",
+        "Negative testing"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Negative testing specifically tests how systems handle invalid, unexpected, or malformed input, ensuring robust error handling and preventing vulnerabilities.",
+      "communityVote": {
+        "D": "96%",
+        "Other": "4%"
+      }
+    }
+  ]
+}

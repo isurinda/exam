@@ -1,0 +1,849 @@
+{
+    "title": "ISC2 CISSP Practice Questions - Set 6 (Q251-300)",
+    "description": "Final complete set of CISSP certification exam practice questions",
+    "questions": [
+      {
+        "id": 251,
+        "topic": "Topic 1",
+        "question": "Which type of disaster recovery plan (DRP) testing carries the MOST operational risk?",
+        "options": [
+          "Cutover",
+          "Parallel",
+          "Walkthrough",
+          "Tabletop"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Cutover testing involves actually switching to the backup site and shutting down primary operations, carrying the highest operational risk as it could disrupt business if the DR site fails.",
+        "communityVote": {
+          "A": "82%",
+          "D": "18%"
+        }
+      },
+      {
+        "id": 252,
+        "topic": "Topic 1",
+        "question": "Which of the following methods provides the MOST protection for user credentials?",
+        "options": [
+          "Forms-based authentication",
+          "Self-registration",
+          "Basic authentication",
+          "Digest authentication"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Digest authentication uses cryptographic hashing of credentials before transmission, providing better protection than basic authentication which sends credentials in base64 encoding.",
+        "communityVote": {
+          "D": "100%"
+        }
+      },
+      {
+        "id": 253,
+        "topic": "Topic 1",
+        "question": "An organization is planning a penetration test that simulates the malicious actions of a former network administrator. What kind of penetration test is needed?",
+        "options": [
+          "Functional test",
+          "Unit test",
+          "Grey box",
+          "White box"
+        ],
+        "correctAnswer": "D",
+        "explanation": "White box testing provides full knowledge of the system, simulating an insider (like a former admin) who has detailed knowledge of infrastructure, credentials, and configurations.",
+        "communityVote": {
+          "D": "58%",
+          "C": "42%"
+        }
+      },
+      {
+        "id": 254,
+        "topic": "Topic 1",
+        "question": "How does Radio-Frequency Identification (RFID) assist with asset management?",
+        "options": [
+          "It uses biometric information for system identification",
+          "It uses two-factor authentication (2FA) for system identification",
+          "It transmits unique serial numbers wirelessly",
+          "It transmits unique Media Access Control (MAC) addresses wirelessly"
+        ],
+        "correctAnswer": "C",
+        "explanation": "RFID tags transmit unique serial numbers wirelessly, allowing automated tracking and identification of assets without line-of-sight or physical contact.",
+        "communityVote": {
+          "C": "100%"
+        }
+      },
+      {
+        "id": 255,
+        "topic": "Topic 1",
+        "question": "Which of the following is the FIRST step an organization's professional performs when defining a cyber-security program based upon industry standards?",
+        "options": [
+          "Review the past security assessments",
+          "Define the organization's objectives regarding security and risk mitigation",
+          "Map the organization's current security practices to industry standards and frameworks",
+          "Select from a choice of security best practices"
+        ],
+        "correctAnswer": "B",
+        "explanation": "The first step is defining organizational objectives and risk tolerance, which provides the foundation for selecting appropriate standards and controls.",
+        "communityVote": {
+          "B": "100%"
+        }
+      },
+      {
+        "id": 256,
+        "topic": "Topic 1",
+        "question": "What is the MOST important criterion that needs to be adhered to during the data collection process of an active investigation?",
+        "options": [
+          "Maintaining the chain of custody",
+          "Capturing an image of the system",
+          "Outlining all actions taken during the investigation",
+          "Complying with the organization's security policy"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Chain of custody ensures evidence integrity and admissibility in legal proceedings by documenting who handled evidence, when, and what was done with it.",
+        "communityVote": {
+          "A": "100%"
+        }
+      },
+      {
+        "id": 257,
+        "topic": "Topic 1",
+        "question": "Two computers, each with a single connection on the same physical 10 gigabit Ethernet network segment, need to communicate with each other. The first machine has a single Internet Protocol (IP) Classless Inter-Domain Routing (CIDR) address of 192.168.1.3/30 and the second machine has an IP/CIDR address 192.168.1.6/30. Which of the following is correct?",
+        "options": [
+          "Since each computer is on a different layer 3 network, traffic between the computers must be processed by a network bridge in order to communicate",
+          "Since each computer is on the same layer 3 network, traffic between the computers may be processed by a network router in order to communicate",
+          "Since each computer is on the same layer 3 network, traffic between the computers may be processed by a network bridge in order to communicate",
+          "Since each computer is on a different layer 3 network, traffic between the computers must be processed by a network router in order to communicate"
+        ],
+        "correctAnswer": "D",
+        "explanation": "A /30 subnet provides 4 IP addresses with only 2 usable. 192.168.1.3/30 is in network 192.168.1.0-3, while 192.168.1.6/30 is in network 192.168.1.4-7, requiring a router for inter-subnet communication.",
+        "communityVote": {
+          "D": "98%",
+          "Other": "2%"
+        }
+      },
+      {
+        "id": 258,
+        "topic": "Topic 1",
+        "question": "Security Software Development Life Cycle (SDLC) expects application code to be written in a consistent manner to allow ease of auditing and which of the following?",
+        "options": [
+          "Protecting",
+          "Copying",
+          "Enhancing",
+          "Executing"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Consistent coding standards facilitate both auditing and enhancing (maintaining/updating) code, as developers can easily understand and modify standardized code.",
+        "communityVote": {
+          "C": "53%",
+          "A": "47%"
+        }
+      },
+      {
+        "id": 259,
+        "topic": "Topic 1",
+        "question": "Which of the following is a risk matrix?",
+        "options": [
+          "A tool for determining risk management decisions for an activity or system",
+          "A database of risks associated with a specific information system",
+          "A two-dimensional picture of risk for organizations, products, projects, or other items of interest",
+          "A table of risk management factors for management to consider"
+        ],
+        "correctAnswer": "C",
+        "explanation": "A risk matrix is a two-dimensional grid that plots likelihood against impact, providing a visual representation of risks for prioritization and decision-making.",
+        "communityVote": {
+          "C": "60%",
+          "A": "40%"
+        }
+      },
+      {
+        "id": 260,
+        "topic": "Topic 1",
+        "question": "What part of an organization's strategic risk assessment MOST likely includes information on items affecting the success of the organization?",
+        "options": [
+          "Threat analysis",
+          "Vulnerability analysis",
+          "Key Performance Indicator (KPI)",
+          "Key Risk Indicator (KRI)"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Key Risk Indicators (KRIs) are metrics that provide early warning signals about risks that could affect organizational success and strategic objectives.",
+        "communityVote": {
+          "D": "68%",
+          "C": "19%",
+          "Other": "13%"
+        }
+      },
+      {
+        "id": 261,
+        "topic": "Topic 1",
+        "question": "A company needs to provide employee access to travel services, which are hosted by a third-party service provider. Employee experience is important, and when users are already authenticated, access to the travel portal is seamless. Which of the following methods is used to share information and grant user access to the travel portal?",
+        "options": [
+          "Single sign-on (SSO) access",
+          "Security Assertion Markup Language (SAML) access",
+          "Open Authorization (OAuth) access",
+          "Federated access"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Federated access allows sharing of authentication and authorization between organizations, enabling seamless access to third-party services once users authenticate to their home organization.",
+        "communityVote": {
+          "D": "56%",
+          "A": "41%",
+          "Other": "3%"
+        }
+      },
+      {
+        "id": 262,
+        "topic": "Topic 1",
+        "question": "The Chief Executive Officer (CEO) wants to implement an internal audit of the company's information security posture. The CEO wants to avoid any bias in the audit process; therefore, has assigned the Sales Director to conduct the audit. After significant interaction over a period of weeks the audit concludes that the company's policies and procedures are sufficient, robust and well established. The CEO then moves on to engage an external penetration testing company in order to showcase the organization's robust information security stance. This exercise reveals significant failings in several critical security controls and shows that the incident response processes remain undocumented. What is the MOST likely reason for this disparity in the results of the audit and the external penetration test?",
+        "options": [
+          "The audit team lacked the technical experience and training to make insightful and objective assessments of the data provided to them",
+          "The scope of the penetration test exercise and the internal audit were significantly different",
+          "The external penetration testing company used custom zero-day attacks that could not have been predicted",
+          "The information technology (IT) and governance teams have failed to disclose relevant information to the internal audit team leading to an incomplete assessment being formulated"
+        ],
+        "correctAnswer": "A",
+        "explanation": "The Sales Director lacks the technical security expertise to properly assess security controls. Effective security audits require specialized knowledge and experience.",
+        "communityVote": {
+          "A": "70%",
+          "B": "25%",
+          "Other": "5%"
+        }
+      },
+      {
+        "id": 263,
+        "topic": "Topic 1",
+        "question": "An information security administrator wishes to block peer-to-peer (P2P) traffic over Hypertext Transfer Protocol (HTTP) tunnels. Which of the following layers of the Open Systems Interconnection (OSI) model requires inspection?",
+        "options": [
+          "Application",
+          "Transport",
+          "Session",
+          "Presentation"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Detecting P2P traffic tunneled over HTTP requires deep packet inspection at the Application layer (Layer 7) to analyze the actual content and protocol behavior.",
+        "communityVote": {
+          "A": "100%"
+        }
+      },
+      {
+        "id": 264,
+        "topic": "Topic 1",
+        "question": "A Chief Information Officer (CIO) has delegated responsibility of their system security to the head of the information technology (IT) department. While corporate policy dictates that only the CIO can make decisions on the level of data protection required, technical implementation decisions are done by the head of the IT department. Which of the following BEST describes the security role filled by the head of the IT department?",
+        "options": [
+          "System security officer",
+          "System processor",
+          "System custodian",
+          "System analyst"
+        ],
+        "correctAnswer": "C",
+        "explanation": "A system custodian is responsible for technical implementation and maintenance of security controls as defined by the data owner, which aligns with the IT head's role.",
+        "communityVote": {
+          "C": "70%",
+          "A": "30%"
+        }
+      },
+      {
+        "id": 265,
+        "topic": "Topic 1",
+        "question": "Which of the following actions should be undertaken prior to deciding on a physical baseline Protection Profile (PP)?",
+        "options": [
+          "Conduct a site survey",
+          "Choose a suitable location",
+          "Check the technical design",
+          "Categorize assets"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Asset categorization must come first to understand what needs protection and its value, which then informs the appropriate level of physical security controls required.",
+        "communityVote": {
+          "D": "51%",
+          "A": "49%"
+        }
+      },
+      {
+        "id": 266,
+        "topic": "Topic 1",
+        "question": "Management has decided that a core application will be used on personal cellular phones. As an implementation requirement, regularly scheduled analysis of the security posture needs to be conducted. Management has also directed that continuous monitoring be implemented. Which of the following is required to accomplish management's directive?",
+        "options": [
+          "Routine reports generated by the user's cellular phone provider that detail security events",
+          "Strict integration of application management, configuration management (CM), and phone management",
+          "Management application installed on user phones that tracks all application events and cellular traffic",
+          "Enterprise-level security information and event management (SIEM) dashboard that provides full visibility of cellular phone activity"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Effective mobile security requires integrating application, configuration, and device management to maintain visibility and control over the security posture.",
+        "communityVote": {
+          "B": "76%",
+          "C": "12%",
+          "D": "12%"
+        }
+      },
+      {
+        "id": 267,
+        "topic": "Topic 1",
+        "question": "A systems engineer is designing a wide area network (WAN) environment for a new organization. The WAN will connect sites holding information at various levels of sensitivity, from publicly available to highly confidential. The organization requires a high degree of interconnectedness to support existing business processes. What is the BEST design approach to securing this environment?",
+        "options": [
+          "Use reverse proxies to create a secondary 'shadow' environment for critical systems",
+          "Place firewalls around critical devices, isolating them from the rest of the environment",
+          "Layer multiple detective and preventative technologies at the environment perimeter",
+          "Align risk across all interconnected elements to ensure critical threats are detected and handled"
+        ],
+        "correctAnswer": "D",
+        "explanation": "In a highly interconnected environment with varying sensitivity levels, aligning risk management across all elements ensures consistent threat detection and response capabilities.",
+        "communityVote": {
+          "D": "63%",
+          "B": "20%",
+          "C": "17%"
+        }
+      },
+      {
+        "id": 268,
+        "topic": "Topic 1",
+        "question": "Which of the following techniques is MOST useful when dealing with advanced persistent threat (APT) intrusions on live virtualized environments?",
+        "options": [
+          "Memory forensics",
+          "Logfile analysis",
+          "Reverse engineering",
+          "Antivirus operations"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Memory forensics captures volatile data from running systems, essential for detecting sophisticated APTs that operate in memory to avoid disk-based detection.",
+        "communityVote": {
+          "A": "79%",
+          "B": "16%",
+          "Other": "5%"
+        }
+      },
+      {
+        "id": 269,
+        "topic": "Topic 1",
+        "question": "Which of the following types of web-based attack is happening when an attacker is able to send a well-crafted, malicious request to an authenticated user without realizing it?",
+        "options": [
+          "Process injection",
+          "Cross-Site request forgery (CSRF)",
+          "Cross-Site Scripting (XSS)",
+          "Broken Authentication And Session Management"
+        ],
+        "correctAnswer": "B",
+        "explanation": "CSRF tricks authenticated users into executing unwanted actions by sending malicious requests that leverage the user's existing authentication session.",
+        "communityVote": {
+          "B": "100%"
+        }
+      },
+      {
+        "id": 270,
+        "topic": "Topic 1",
+        "question": "A scan report returned multiple vulnerabilities affecting several production servers that are mission critical. Attempts to apply the patches in the development environment have caused the servers to crash. What is the BEST course of action?",
+        "options": [
+          "Mitigate the risks with compensating controls",
+          "Upgrade the software affected by the vulnerability",
+          "Remove the affected software from the servers",
+          "Inform management of possible risks"
+        ],
+        "correctAnswer": "A",
+        "explanation": "When patches cause system instability, implementing compensating controls provides security while maintaining system availability until a stable patch solution is found.",
+        "communityVote": {
+          "A": "61%",
+          "D": "39%"
+        }
+      },
+      {
+        "id": 271,
+        "topic": "Topic 1",
+        "question": "A security professional has reviewed a recent site assessment and has noted that a server room on the second floor of a building has Heating, Ventilation, and Air Conditioning (HVAC) intakes on the ground level that have ultraviolet light filters installed, Aero-K Fire suppression in the server room, and pre-action fire suppression on floors above the server room. Which of the following changes can the security professional recommend to reduce risk associated with these conditions?",
+        "options": [
+          "Remove the ultraviolet light filters on the HVAC intake and replace the fire suppression system on the upper floors with a dry system",
+          "Elevate the HVAC intake by constructing a plenum or external shaft over it and convert the server room fire suppression to a pre-action system",
+          "Add additional ultraviolet light filters to the HVAC intake supply and return ducts and change server room fire suppression to FM-200",
+          "Apply additional physical security around the HVAC intakes and update upper floor fire suppression to FM-200"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Securing ground-level HVAC intakes prevents tampering, and FM-200 on upper floors prevents water damage to servers below from pre-action system activation.",
+        "communityVote": {
+          "D": "62%",
+          "A": "23%",
+          "B": "15%"
+        }
+      },
+      {
+        "id": 272,
+        "topic": "Topic 1",
+        "question": "Which of the following is the MOST common use of the Online Certificate Status Protocol (OCSP)?",
+        "options": [
+          "To verify the validity of an X.509 digital certificate",
+          "To obtain the expiration date of an X.509 digital certificate",
+          "To obtain the revocation status of an X.509 digital certificate",
+          "To obtain the author name of an X.509 digital certificate"
+        ],
+        "correctAnswer": "C",
+        "explanation": "OCSP's primary purpose is to check the real-time revocation status of digital certificates, providing an alternative to Certificate Revocation Lists (CRLs).",
+        "communityVote": {
+          "C": "63%",
+          "A": "37%"
+        }
+      },
+      {
+        "id": 273,
+        "topic": "Topic 1",
+        "question": "A security professional has been assigned to assess a web application. The assessment report recommends switching to Security Assertion Markup Language (SAML). What is the PRIMARY security benefit in switching to SAML?",
+        "options": [
+          "It enables single sign-on (SSO) for web applications",
+          "It uses Transport Layer Security (TLS) to address confidentiality",
+          "It limits unnecessary data entry on web forms",
+          "The users' password is not passed during authentication"
+        ],
+        "correctAnswer": "D",
+        "explanation": "SAML's primary security benefit is that passwords are never transmitted to service providers; instead, identity assertions are exchanged, reducing credential exposure.",
+        "communityVote": {
+          "D": "54%",
+          "A": "46%"
+        }
+      },
+      {
+        "id": 274,
+        "topic": "Topic 1",
+        "question": "An organization purchased a commercial off-the-shelf (COTS) software several years ago. The information technology (IT) Director has decided to migrate the application into the cloud, but is concerned about the application security of the software in the organization's dedicated environment with a cloud service provider. What is the BEST way to prevent and correct the software's security weaknesses?",
+        "options": [
+          "Follow the software end-of-life schedule",
+          "Implement a dedicated COTS sandbox environment",
+          "Transfer the risk to the cloud service provider",
+          "Examine the software updating and patching process"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Regular updates and patches are essential for maintaining COTS software security. Understanding and implementing proper patching processes addresses vulnerabilities proactively.",
+        "communityVote": {
+          "D": "81%",
+          "B": "19%"
+        }
+      },
+      {
+        "id": 275,
+        "topic": "Topic 1",
+        "question": "What type of database attack would allow a customer service employee to determine quarterly sales results before they are publicly announced?",
+        "options": [
+          "Inference",
+          "Aggregation",
+          "Polyinstantiation",
+          "Data mining"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Inference attacks allow users to deduce sensitive information by analyzing available data and relationships, even when they don't have direct access to the sensitive data itself.",
+        "communityVote": {
+          "A": "72%",
+          "B": "16%",
+          "Other": "12%"
+        }
+      },
+      {
+        "id": 276,
+        "topic": "Topic 1",
+        "question": "In a multi-tenant cloud environment, what approach will secure logical access to assets?",
+        "options": [
+          "Controlled configuration management (CM)",
+          "Transparency/Auditability of administrative access",
+          "Virtual private cloud (VPC)",
+          "Hybrid cloud"
+        ],
+        "correctAnswer": "C",
+        "explanation": "VPC provides network isolation in multi-tenant environments, creating logical separation between different tenants' resources through virtualized network infrastructure.",
+        "communityVote": {
+          "C": "100%"
+        }
+      },
+      {
+        "id": 277,
+        "topic": "Topic 1",
+        "question": "An information technology (IT) employee who travels frequently to various countries remotely connects to an organization's resources to troubleshoot problems. Which of the following solutions BEST serves as a secure control mechanism to meet the organization's requirements?",
+        "options": [
+          "Install a third-party screen sharing solution that provides remote connection from a public website",
+          "Install a bastion host in the demilitarized zone (DMZ) and allow multi-factor authentication (MFA) access",
+          "Implement a Dynamic Domain Name Services (DDNS) account to initiate a virtual private network (VPN) using the DDNS record",
+          "Update the firewall rules to include the static Internet Protocol (IP) addresses of the locations where the employee connects from"
+        ],
+        "correctAnswer": "B",
+        "explanation": "A bastion host with MFA in the DMZ provides secure, controlled access for remote connections while maintaining security through strong authentication.",
+        "communityVote": {
+          "B": "100%"
+        }
+      },
+      {
+        "id": 278,
+        "topic": "Topic 1",
+        "question": "Which of the following is the BEST way to determine the success of a patch management process?",
+        "options": [
+          "Change management",
+          "Configuration management (CM)",
+          "Analysis and impact assessment",
+          "Auditing and assessment"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Regular auditing and assessment verify that patches are properly deployed, systems remain compliant, and the patch management process is effective.",
+        "communityVote": {
+          "D": "82%",
+          "A": "18%"
+        }
+      },
+      {
+        "id": 279,
+        "topic": "Topic 1",
+        "question": "An organization has discovered that organizational data is posted by employees to data storage accessible to the general public. What is the PRIMARY step an organization must take to ensure data is properly protected from public release?",
+        "options": [
+          "Implement a user reporting policy",
+          "Implement a data encryption policy",
+          "Implement a user training policy",
+          "Implement a data classification policy"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Data classification is the foundation for all data protection efforts, defining what data is sensitive and requires protection before implementing technical controls or training.",
+        "communityVote": {
+          "D": "64%",
+          "C": "36%"
+        }
+      },
+      {
+        "id": 280,
+        "topic": "Topic 1",
+        "question": "A security engineer is required to integrate security into a software project that is implemented by small groups that quickly, continuously, and independently develop, test, and deploy code to the cloud. The engineer will MOST likely integrate with which software development process?",
+        "options": [
+          "DevOps Integrated Product Team (IPT)",
+          "Structured Waterfall Programming Development",
+          "Service-oriented architecture (SOA)",
+          "Spiral Methodology"
+        ],
+        "correctAnswer": "A",
+        "explanation": "DevOps emphasizes rapid, continuous development and deployment with automated testing and integration, matching the described workflow.",
+        "communityVote": {
+          "A": "62%",
+          "D": "31%",
+          "Other": "7%"
+        }
+      },
+      {
+        "id": 281,
+        "topic": "Topic 1",
+        "question": "Which of the following is the BEST method to identify security controls that should be implemented for a web-based application while in development?",
+        "options": [
+          "Agile software development",
+          "Secure software development",
+          "Application threat modeling",
+          "Penetration testing"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Threat modeling during development identifies potential threats and appropriate security controls before code is written, enabling security-by-design.",
+        "communityVote": {
+          "C": "100%"
+        }
+      },
+      {
+        "id": 282,
+        "topic": "Topic 1",
+        "question": "Which Open Systems Interconnection (OSI) layer(s) BEST corresponds to the network access layer in the Transmission Control Protocol/Internet Protocol (TCP/IP) model?",
+        "options": [
+          "Data Link and Physical Layers",
+          "Session and Network Layers",
+          "Transport Layer",
+          "Application, Presentation, and Session Layers"
+        ],
+        "correctAnswer": "A",
+        "explanation": "The TCP/IP Network Access layer combines the OSI Data Link layer (Layer 2) and Physical layer (Layer 1), handling both hardware addressing and physical transmission.",
+        "communityVote": {
+          "A": "100%"
+        }
+      },
+      {
+        "id": 283,
+        "topic": "Topic 1",
+        "question": "An organization's retail website provides its only source of revenue, so the disaster recovery plan (DRP) must document an estimated time for each step in the plan. Which of the following steps in the DRP will list the GREATEST duration of time for the service to be fully operational?",
+        "options": [
+          "Update the Network Address Translation (NAT) table",
+          "Update Domain Name System (DNS) server addresses with domain registrar",
+          "Update the Border Gateway Protocol (BGP) autonomous system number",
+          "Update the web server network adapter configuration"
+        ],
+        "correctAnswer": "B",
+        "explanation": "DNS propagation across the internet can take 24-48 hours due to caching at various levels, making it the longest step in DR site activation.",
+        "communityVote": {
+          "B": "69%",
+          "C": "31%"
+        }
+      },
+      {
+        "id": 284,
+        "topic": "Topic 1",
+        "question": "In supervisory control and data acquisition (SCADA) systems, which of the following controls can be used to reduce device exposure to malware?",
+        "options": [
+          "Disallow untested code in the execution space of the SCADA device",
+          "Disable all command line interfaces",
+          "Disable Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) port 138 and 139 on the SCADA device",
+          "Prohibit the use of unsecure scripting languages"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Preventing execution of untested code (application whitelisting) is the most effective control for protecting SCADA systems from malware in critical infrastructure.",
+        "communityVote": {
+          "A": "85%",
+          "Other": "15%"
+        }
+      },
+      {
+        "id": 285,
+        "topic": "Topic 1",
+        "question": "Which of the following secure transport protocols is often used to secure Voice over Internet Protocol (VoIP) communications on a network from end to end?",
+        "options": [
+          "Secure File Transfer Protocol (SFTP)",
+          "Secure Real-time Transport Protocol (SRTP)",
+          "Generic Routing Encapsulation (GRE)",
+          "Internet Protocol Security (IPSec)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "SRTP is specifically designed to provide encryption, authentication, and integrity for real-time communications like VoIP, securing RTP/RTCP streams.",
+        "communityVote": {
+          "B": "100%"
+        }
+      },
+      {
+        "id": 286,
+        "topic": "Topic 1",
+        "question": "A healthcare insurance organization chose a vendor to develop a software application. Upon review of the draft contract, the information security professional notices that software security is not addressed. What is the BEST approach to address the issue?",
+        "options": [
+          "Update the contract to require the vendor to perform security code reviews",
+          "Update the service level agreement (SLA) to provide the organization the right to audit the vendor",
+          "Update the contract so that the vendor is obligated to provide security capabilities",
+          "Update the service level agreement (SLA) to require the vendor to provide security capabilities"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Security requirements must be in the contract (legal obligation) rather than just the SLA, ensuring vendor accountability for delivering secure software.",
+        "communityVote": {
+          "C": "77%",
+          "B": "15%",
+          "Other": "8%"
+        }
+      },
+      {
+        "id": 287,
+        "topic": "Topic 1",
+        "question": "Which of the following security tools will ensure authorized data is sent to the application when implementing a cloud-based application?",
+        "options": [
+          "Host-based intrusion prevention system (HIPS)",
+          "Access control list (ACL)",
+          "Data loss prevention (DLP)",
+          "File integrity monitoring (FIM)"
+        ],
+        "correctAnswer": "C",
+        "explanation": "DLP monitors and controls data in motion, at rest, and in use, ensuring only authorized data is transmitted to cloud applications.",
+        "communityVote": {
+          "C": "50%",
+          "B": "48%",
+          "Other": "2%"
+        }
+      },
+      {
+        "id": 288,
+        "topic": "Topic 1",
+        "question": "A client server infrastructure that provides user-to-server authentication describes which one of the following?",
+        "options": [
+          "Secure Sockets Layer (SSL)",
+          "User-based authorization",
+          "Kerberos",
+          "X.509"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Kerberos is specifically designed to provide secure user-to-server authentication in client-server environments using ticket-based authentication.",
+        "communityVote": {
+          "C": "94%",
+          "Other": "6%"
+        }
+      },
+      {
+        "id": 289,
+        "topic": "Topic 1",
+        "question": "A system developer has a requirement for an application to check for a secure digital signature before the application is accessed on a user's laptop. Which security mechanism addresses this requirement?",
+        "options": [
+          "Trusted Platform Module (TPM)",
+          "Certificate revocation list (CRL) policy",
+          "Key exchange",
+          "Hardware encryption"
+        ],
+        "correctAnswer": "A",
+        "explanation": "TPM can verify digital signatures and ensure software integrity before execution, providing hardware-based security for application validation.",
+        "communityVote": {
+          "A": "74%",
+          "B": "26%"
+        }
+      },
+      {
+        "id": 290,
+        "topic": "Topic 1",
+        "question": "Which of the following is a term used to describe maintaining ongoing awareness of information security, vulnerabilities, and threats to support organizational risk management decisions?",
+        "options": [
+          "Information Security Continuous Monitoring (ISCM)",
+          "Risk Management Framework (RMF)",
+          "Information Sharing & Analysis Centers (ISAC)",
+          "Information Security Management System (ISMS)"
+        ],
+        "correctAnswer": "A",
+        "explanation": "ISCM provides continuous monitoring of security controls, vulnerabilities, and threats, enabling real-time risk-based decision making.",
+        "communityVote": {
+          "A": "100%"
+        }
+      },
+      {
+        "id": 291,
+        "topic": "Topic 1",
+        "question": "Which of the following types of firewall only examines the 'handshaking' between packets before forwarding traffic?",
+        "options": [
+          "Proxy firewalls",
+          "Circuit-level firewalls",
+          "Network Address Translation (NAT) firewalls",
+          "Host-based firewalls"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Circuit-level firewalls operate at the Session layer, examining TCP handshakes to establish connections before allowing data transfer.",
+        "communityVote": {
+          "B": "100%"
+        }
+      },
+      {
+        "id": 292,
+        "topic": "Topic 1",
+        "question": "What is a use for mandatory access control (MAC)?",
+        "options": [
+          "Allows for mandatory user identity and passwords based on sensitivity",
+          "Allows for mandatory system administrator access control over objects",
+          "Allows for labeling of sensitive user accounts for access control",
+          "Allows for object security based on sensitivity represented by a label"
+        ],
+        "correctAnswer": "D",
+        "explanation": "MAC uses security labels on both subjects and objects, with access decisions based on comparing these labels according to a security policy.",
+        "communityVote": {
+          "D": "100%"
+        }
+      },
+      {
+        "id": 293,
+        "topic": "Topic 1",
+        "question": "An organization has developed a way for customers to share information from their wearable devices with each other. Unfortunately, the users were not informed as to what information collected would be shared. What technical controls should be put in place to remedy the privacy issue while still trying to accomplish the organization's business goals?",
+        "options": [
+          "Share only what the organization decides is best",
+          "Stop sharing data with the other users",
+          "Default the user to not share any information",
+          "Inform the user of the sharing feature changes after implemented"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Defaulting to no sharing (opt-in approach) respects user privacy and gives users control over their data, complying with privacy principles.",
+        "communityVote": {
+          "C": "77%",
+          "D": "23%"
+        }
+      },
+      {
+        "id": 294,
+        "topic": "Topic 1",
+        "question": "Which of the following system components enforces access controls on an object?",
+        "options": [
+          "Security perimeter",
+          "Access control matrix",
+          "Trusted domain",
+          "Reference monitor"
+        ],
+        "correctAnswer": "D",
+        "explanation": "The reference monitor is the component that mediates all access requests and enforces the security policy for object access.",
+        "communityVote": {
+          "D": "100%"
+        }
+      },
+      {
+        "id": 295,
+        "topic": "Topic 1",
+        "question": "In setting expectations when reviewing the results of a security test, which of the following statements is MOST important to convey to reviewers?",
+        "options": [
+          "The accuracy of testing results can be greatly improved if the target(s) are properly hardened",
+          "The results of the tests represent a point-in-time assessment of the target(s)",
+          "The deficiencies identified can be corrected immediately",
+          "The target's security posture cannot be further compromised"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Security test results are only valid at the time of testing. Systems change, new vulnerabilities emerge, making it a snapshot rather than ongoing guarantee.",
+        "communityVote": {
+          "B": "100%"
+        }
+      },
+      {
+        "id": 296,
+        "topic": "Topic 1",
+        "question": "What is the benefit of an operating system (OS) feature that is designed to prevent an application from executing code from a non-executable memory region?",
+        "options": [
+          "Identifies which security patches still need to be installed on the system",
+          "Reduces the risk of polymorphic viruses from encrypting their payload",
+          "Stops memory resident viruses from propagating their payload",
+          "Helps prevent certain exploits that store code in buffers"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Data Execution Prevention (DEP) or No-Execute (NX) prevents buffer overflow exploits by marking memory regions as non-executable, stopping code injection attacks.",
+        "communityVote": {
+          "D": "95%",
+          "Other": "5%"
+        }
+      },
+      {
+        "id": 297,
+        "topic": "Topic 1",
+        "question": "What is the overall goal of software security testing?",
+        "options": [
+          "Identifying the key security features of the software",
+          "Ensuring all software functions perform as specified",
+          "Reducing vulnerabilities within a software system",
+          "Making software development more agile"
+        ],
+        "correctAnswer": "C",
+        "explanation": "The primary goal of security testing is to identify and reduce vulnerabilities, making the software more resistant to attacks.",
+        "communityVote": {
+          "C": "89%",
+          "Other": "11%"
+        }
+      },
+      {
+        "id": 298,
+        "topic": "Topic 1",
+        "question": "Which of the following implementations will achieve high availability in a website?",
+        "options": [
+          "Disk mirroring of the web server with redundant disk drives in a hardened data center",
+          "Disk striping of the web server hard drives and large amounts of bandwidth",
+          "Multiple geographically dispersed web servers that are configured for failover",
+          "Multiple Domain Name System (DNS) entries resolving to the same web server and large amounts of bandwidth"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Geographic distribution with failover provides true high availability by protecting against site-level failures and disasters while maintaining service continuity.",
+        "communityVote": {
+          "C": "100%"
+        }
+      },
+      {
+        "id": 299,
+        "topic": "Topic 1",
+        "question": "Which of the following is an important design feature for the outer door of a mantrap?",
+        "options": [
+          "Allow it to be opened by an alarmed emergency button",
+          "Do not allow anyone to enter it alone",
+          "Do not allow it to be observed by closed-circuit television (CCTV) cameras",
+          "Allow it be opened when the inner door of the mantrap is also open"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Mantraps must have emergency exits for life safety, typically using alarmed emergency release buttons to allow egress during emergencies while maintaining security awareness.",
+        "communityVote": {
+          "A": "94%",
+          "Other": "6%"
+        }
+      },
+      {
+        "id": 300,
+        "topic": "Topic 1",
+        "question": "Which of the following is the MOST important rule for digital investigations?",
+        "options": [
+          "Ensure original data is never modified",
+          "Ensure systems are powered on",
+          "Ensure event logs are rotated",
+          "Ensure individual privacy is protected"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Preserving original evidence integrity is paramount in digital forensics. All analysis should be performed on copies to maintain the evidentiary value of original data.",
+        "communityVote": {
+          "A": "100%"
+        }
+      }
+    ]
+  }

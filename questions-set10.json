@@ -1,0 +1,573 @@
+{
+  "title": "ISC2 CISSP Practice Questions - Set 10 (Q451-484)",
+  "description": "Advanced CISSP certification exam practice questions - Set 10",
+  "questions": [
+    {
+      "id": 451,
+      "topic": "Topic 1",
+      "question": "In designing the architecture of an access control system, it was determined that confidentiality and controlled access to information were the primary focus. Which of the following security models is the BEST choice for the organization?",
+      "options": [
+        "Biba integrity model",
+        "Clark-Wilson model",
+        "Bell-LaPadula model",
+        "Brewer-Nash model"
+      ],
+      "correctAnswer": "C",
+      "explanation": "The Bell-LaPadula model is specifically designed to enforce confidentiality through mandatory access control, using 'no read up' and 'no write down' rules to prevent information leakage.",
+      "communityVote": {
+        "C": "100%"
+      }
+    },
+    {
+      "id": 452,
+      "topic": "Topic 1",
+      "question": "An organization is developing employee training content to increase awareness of Payment Card Industry (PCI) standards. What are the three types of awareness roles applicable to the organization?",
+      "options": [
+        "All personnel, specialized, management",
+        "Standard, privileged, administrator",
+        "Basic, intermediate, advanced",
+        "Technical, operational, administrative"
+      ],
+      "correctAnswer": "A",
+      "explanation": "PCI training programs should address three role-based levels: all personnel (general awareness), specialized roles (specific responsibilities), and management (oversight and governance).",
+      "communityVote": {
+        "A": "100%"
+      }
+    },
+    {
+      "id": 453,
+      "topic": "Topic 1",
+      "question": "Which of the following is the BEST method to perform an end-to-end testing on production for both operational and security requirements?",
+      "options": [
+        "Synthetic transaction analysis",
+        "Dynamic code analysis",
+        "Static code analysis",
+        "Vulnerability analysis"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Synthetic transaction analysis simulates real user transactions end-to-end in production environments, testing both operational functionality and security controls without affecting real users.",
+      "communityVote": {
+        "A": "68%",
+        "B": "32%"
+      }
+    },
+    {
+      "id": 454,
+      "topic": "Topic 1",
+      "question": "A security architect is reviewing an implemented security framework. After the review, the security architect wants to enhance the security by implementing segregation of duties (SoD) to address protection against fraud. Which security model BEST protects the integrity of data?",
+      "options": [
+        "The Brewer-Nash model",
+        "The Biba Integrity model",
+        "The Bell-LaPadula model",
+        "The Clark-Wilson model"
+      ],
+      "correctAnswer": "D",
+      "explanation": "The Clark-Wilson model enforces data integrity through well-formed transactions and separation of duties, specifically designed to prevent fraud through constrained data item manipulation.",
+      "communityVote": {
+        "D": "71%",
+        "B": "29%"
+      }
+    },
+    {
+      "id": 455,
+      "topic": "Topic 1",
+      "question": "An organization is building an enterprise system using attribute-based access control (ABAC). To avoid inadvertent exposure, what should organizations do to ensure the proper handling of personally identifiable information (PII) and enforcement of PII regulations across the enterprise?",
+      "options": [
+        "Employ trust agent",
+        "Employ trust agreements",
+        "Employ training program",
+        "Employ regulations from leadership"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Training programs ensure all personnel understand PII handling requirements, ABAC attribute usage, and regulatory compliance, preventing inadvertent exposure through awareness and proper procedures.",
+      "communityVote": {
+        "C": "53%",
+        "B": "23%",
+        "D": "17%",
+        "Other": "7%"
+      }
+    },
+    {
+      "id": 456,
+      "topic": "Topic 1",
+      "question": "Which of the following is a strong security protection provided by Trusted Platform Module (TPM)?",
+      "options": [
+        "Providing data integrity through digital signatures",
+        "Creation of a secure kernel",
+        "Separation of encryption keys from storage devices",
+        "Reporting of system integrity"
+      ],
+      "correctAnswer": "C",
+      "explanation": "TPM provides hardware-based key storage, keeping encryption keys separate from general storage devices, protecting keys even if the storage device is compromised.",
+      "communityVote": {
+        "C": "54%",
+        "D": "46%"
+      }
+    },
+    {
+      "id": 457,
+      "topic": "Topic 1",
+      "question": "An application developer is developing a web application that will store and process personal information of European Union (EU) residents. Which of the following security principles explicitly specified in General Data Protection Regulation (GDPR), should the developer apply to safeguard the personal information in the application?",
+      "options": [
+        "Authorization",
+        "Tokenization",
+        "Pseudonymization",
+        "Authentication"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Pseudonymization is explicitly mentioned in GDPR as a technical measure to protect personal data by processing it in a way that prevents identification without additional information.",
+      "communityVote": {
+        "C": "100%"
+      }
+    },
+    {
+      "id": 458,
+      "topic": "Topic 1",
+      "question": "A security architect is implementing an authentication system for a distributed network of servers. This network will be accessed by users on workstations that cannot trust the identity of the user. Which solution should the security architect use to have the users trust one another?",
+      "options": [
+        "One-way authentication",
+        "Kerberos",
+        "Mutual authentication",
+        "Single session software tokens"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Mutual authentication ensures both parties verify each other's identities, establishing trust in environments where initial trust cannot be assumed.",
+      "communityVote": {
+        "C": "65%",
+        "B": "35%"
+      }
+    },
+    {
+      "id": 459,
+      "topic": "Topic 1",
+      "question": "Which process compares its results against a standard to determine whether the results meet the standard?",
+      "options": [
+        "Penetration test",
+        "Security audit",
+        "Security assessment",
+        "Functional review"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Security audits compare actual practices and controls against established standards or baselines to determine compliance and identify gaps.",
+      "communityVote": {
+        "B": "100%"
+      }
+    },
+    {
+      "id": 460,
+      "topic": "Topic 1",
+      "question": "A security consultant has been hired by a company to establish its vulnerability management program. The consultant is now in the deployment phase. Which of the following tasks is part of this process?",
+      "options": [
+        "Educate and train key stakeholders",
+        "Measure effectiveness of the program's stated goals",
+        "Determine a budget and cost analysis for the program",
+        "Select and procure supporting technologies"
+      ],
+      "correctAnswer": "A",
+      "explanation": "During deployment, educating and training stakeholders ensures they understand their roles and responsibilities in the vulnerability management program.",
+      "communityVote": {
+        "A": "52%",
+        "D": "39%",
+        "Other": "9%"
+      }
+    },
+    {
+      "id": 461,
+      "topic": "Topic 1",
+      "question": "An organization is formulating a strategy to provide access to third-party partners. The information technology (IT) department has been tasked with providing access by utilizing cloud services. Which of the following technologies is MOST commonly employed for completing the task?",
+      "options": [
+        "Identity as a Service (IDaaS)",
+        "Firewall as a service",
+        "Infrastructure as a Service (IaaS)",
+        "Software as a Service (SaaS)"
+      ],
+      "correctAnswer": "A",
+      "explanation": "IDaaS provides cloud-based identity and access management, ideal for managing third-party partner access through federated identity and SSO capabilities.",
+      "communityVote": {
+        "A": "100%"
+      }
+    },
+    {
+      "id": 462,
+      "topic": "Topic 1",
+      "question": "Which of the following are key activities when conducting a security assessment?",
+      "options": [
+        "Schedule, collect, examine",
+        "Interview, examine, simulate",
+        "Collect, interview, test",
+        "Examine, interview, test"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Security assessments involve examining documentation and configurations, interviewing personnel, and testing controls to evaluate their effectiveness.",
+      "communityVote": {
+        "D": "100%"
+      }
+    },
+    {
+      "id": 463,
+      "topic": "Topic 1",
+      "question": "An organization wants to ensure that employees that move to a different department within the organization do not retain access privileges from their former department. To this end, the organization has implemented role-based access control (RBAC). Which additional measure is MOST important to successfully limit excess access privileges?",
+      "options": [
+        "Business role review",
+        "Line manager review of assigned roles",
+        "Segregation of duties (SoD) review",
+        "Access control matrix"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Line manager reviews ensure role assignments are current and appropriate when employees change positions, preventing privilege accumulation.",
+      "communityVote": {
+        "B": "50%",
+        "A": "38%",
+        "Other": "12%"
+      }
+    },
+    {
+      "id": 464,
+      "topic": "Topic 1",
+      "question": "An organization has experienced multiple distributed denial-of-service (DDoS) attacks in recent months that have impact of their public-facing web and e-commerce sites that were previously all on-premises. After an analysis of the problems, the network engineers have recommended that the organization implement additional name service providers and redundant network paths. What is another recommendation that helps ensure the future availability of their web and e-commerce sites?",
+      "options": [
+        "Move all cloud-based operations back to on-premises to mitigate attacks",
+        "Move all websites to a new location",
+        "Review current detection strategies and employ signature-based techniques",
+        "Review the service-level agreements (SLA) with their cloud service providers"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Reviewing SLAs ensures cloud providers have appropriate DDoS mitigation capabilities and response commitments to maintain availability during attacks.",
+      "communityVote": {
+        "D": "54%",
+        "C": "46%"
+      }
+    },
+    {
+      "id": 465,
+      "topic": "Topic 1",
+      "question": "While reviewing a web application-to-application connection, a security professional finds the use of Representational State Transfer (REST) application programming interfaces (API) and identifies it as secure. Which one of the following connection Uniform Resource Locators (URL) applies to this scenario?",
+      "options": [
+        "https://url.com/Resources//action?apiKey=a399ikjiuynj",
+        "http://url.com/SecureTLS//action",
+        "http://url.com/Resources//action?apiKey=a399ikjiuynj",
+        "https://url.com/Resources//action"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Secure REST APIs use HTTPS without exposing API keys in URLs. Authentication should use headers or body, not query parameters visible in URLs.",
+      "communityVote": {
+        "D": "86%",
+        "Other": "14%"
+      }
+    },
+    {
+      "id": 466,
+      "topic": "Topic 1",
+      "question": "Which of the following principles is intended to produce information security professionals that are capable of vision and proactive response?",
+      "options": [
+        "Information security awareness",
+        "Information security program",
+        "Information security education",
+        "Information security certification"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Information security education develops strategic thinking, vision, and proactive capabilities, enabling professionals to anticipate and respond to emerging threats.",
+      "communityVote": {
+        "C": "100%"
+      }
+    },
+    {
+      "id": 467,
+      "topic": "Topic 1",
+      "question": "An organization is the victim of a major data breach just one month after passing an external cyber security audit. Which of the following is the likely reason for this situation?",
+      "options": [
+        "Both the auditor and the organization validated the controls to be accurate",
+        "The organization had the minimum level of controls in place to pass the audit",
+        "The auditor performed an in-depth analysis of the required controls",
+        "The audit was initiated by appropriate levels of management in the organization"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Organizations implementing only minimum controls to pass audits remain vulnerable, as audits check compliance against standards, not comprehensive security.",
+      "communityVote": {
+        "B": "100%"
+      }
+    },
+    {
+      "id": 468,
+      "topic": "Topic 1",
+      "question": "Which of the following is MOST effective method of defending against zero-day malware threats?",
+      "options": [
+        "Client firewalls",
+        "Client event logging",
+        "Client application whitelisting",
+        "Client antivirus"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Application whitelisting prevents execution of unknown code, including zero-day malware, by only allowing approved applications to run.",
+      "communityVote": {
+        "C": "78%",
+        "Other": "22%"
+      }
+    },
+    {
+      "id": 469,
+      "topic": "Topic 1",
+      "question": "Which dynamic routing protocol is BEST suited for a dispersed campus network utilizing Internet Protocol version 6 (IPv6) addresses?",
+      "options": [
+        "Open Shortest Path First (OSPF) version 3",
+        "Enhanced Interior Gateway Routing Protocol (EIGRP)",
+        "Border Gateway Protocol (BGP) version 4",
+        "Routing Information Protocol (RIP) version 2"
+      ],
+      "correctAnswer": "A",
+      "explanation": "OSPFv3 is designed specifically for IPv6 networks, providing efficient routing for campus environments with support for IPv6 addressing.",
+      "communityVote": {
+        "A": "81%",
+        "B": "19%"
+      }
+    },
+    {
+      "id": 470,
+      "topic": "Topic 1",
+      "question": "Which of the following is a safeguard that could be used to validate a service provider and the authenticity of their service?",
+      "options": [
+        "Information graphing",
+        "Code signing",
+        "Service signing",
+        "Code graphing"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Code signing uses digital signatures to verify software authenticity and publisher identity, ensuring code hasn't been tampered with.",
+      "communityVote": {
+        "B": "75%",
+        "C": "25%"
+      }
+    },
+    {
+      "id": 471,
+      "topic": "Topic 1",
+      "question": "When implementing single sign-on (SSO) on a network, which authentication approach BEST allows users to use credentials across multiple applications?",
+      "options": [
+        "Public key infrastructure (PKI)",
+        "Security Assertion Markup Language (SAML)",
+        "Delegated Identity Management",
+        "Federated Identity Management"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Federated Identity Management enables users to authenticate once and access multiple applications across organizational boundaries using trusted identity providers.",
+      "communityVote": {
+        "D": "50%",
+        "B": "46%",
+        "Other": "4%"
+      }
+    },
+    {
+      "id": 472,
+      "topic": "Topic 1",
+      "question": "Which of the following processes is BEST used to determine the extent to which modifications to an information system affect the security posture of the system?",
+      "options": [
+        "Patch management",
+        "Continuous monitoring",
+        "Configuration change control",
+        "Security impact analysis"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Security impact analysis evaluates how system modifications affect security controls, identifying potential vulnerabilities or control weaknesses introduced by changes.",
+      "communityVote": {
+        "D": "100%"
+      }
+    },
+    {
+      "id": 473,
+      "topic": "Topic 1",
+      "question": "Which of the following attacks describes the intent behind the pivoting method used by attackers or penetration testers?",
+      "options": [
+        "Interrupt the communications flows on the network",
+        "Use a compromised or obsolete system to traverse the network",
+        "Extract sensitive data from resources on the network",
+        "Escalate compromised user permissions within the network"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Pivoting uses a compromised system as a stepping stone to access other systems or network segments that wouldn't be directly accessible to the attacker.",
+      "communityVote": {
+        "B": "100%"
+      }
+    },
+    {
+      "id": 474,
+      "topic": "Topic 1",
+      "question": "A vendor released a security patch for a dangerous vulnerability affecting thousands of computers in an organization. Which of the following actions will the security practitioner do FIRST to mitigate the security risk?",
+      "options": [
+        "Deploy the patch",
+        "Accept the risk",
+        "Transfer the risk",
+        "Evaluate the patch"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Patches must be evaluated and tested before deployment to ensure they don't introduce system instability or conflicts while addressing the vulnerability.",
+      "communityVote": {
+        "D": "100%"
+      }
+    },
+    {
+      "id": 475,
+      "topic": "Topic 1",
+      "question": "At which layer of the Open Systems Interconnection (OSI) model does a circuit-level firewall operate?",
+      "options": [
+        "Session layer",
+        "Network layer",
+        "Application layer",
+        "Transport layer"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Circuit-level firewalls operate at the Session layer (Layer 5), monitoring TCP handshakes and session establishment without examining application data.",
+      "communityVote": {
+        "A": "88%",
+        "Other": "12%"
+      }
+    },
+    {
+      "id": 476,
+      "topic": "Topic 1",
+      "question": "An architect has observed the complexity of a new design has introduced increased risk. After review, the test team lead cannot determine how to test for some of the security controls the organization requires to be in place. Which of the following secure design principles has MOST likely been violated?",
+      "options": [
+        "Complete remediation",
+        "Economy of mechanism",
+        "Psychological acceptability",
+        "Least privilege"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Economy of mechanism advocates for simple, understandable designs. Complex designs that can't be properly tested violate this principle.",
+      "communityVote": {
+        "B": "100%"
+      }
+    },
+    {
+      "id": 477,
+      "topic": "Topic 1",
+      "question": "An organization would like to secure a trusted and untrusted network. One of the requirements is to provide access to the trusted network from a few of the hosts from the untrusted network. Which of the following is the BEST device or system that should be deployed to enable this capability?",
+      "options": [
+        "Router",
+        "Bastion host",
+        "Forward proxy host",
+        "Intrusion detection system (IDS)"
+      ],
+      "correctAnswer": "B",
+      "explanation": "A bastion host is a hardened system designed to provide controlled access from untrusted networks to trusted networks while minimizing attack surface.",
+      "communityVote": {
+        "B": "100%"
+      }
+    },
+    {
+      "id": 478,
+      "topic": "Topic 1",
+      "question": "Which of the following languages supports a modular program structure and was designed for military and real-time systems?",
+      "options": [
+        "C++",
+        "Personal Home Page (PHP)",
+        "Ada",
+        "Java"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ada was specifically designed for military and real-time systems, featuring strong typing, modularity, and reliability for safety-critical applications.",
+      "communityVote": {
+        "C": "100%"
+      }
+    },
+    {
+      "id": 479,
+      "topic": "Topic 1",
+      "question": "Which of the following BEST describes an example of evading intrusion detection system (IDS) signature detection?",
+      "options": [
+        "Packet fragmentation",
+        "SQL injection (SQLi)",
+        "Cross-Site Scripting (XSS)",
+        "Encoding"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Packet fragmentation splits attack payloads across multiple packets, potentially evading IDS signatures that look for complete attack patterns in single packets.",
+      "communityVote": {
+        "A": "50%",
+        "D": "50%"
+      }
+    },
+    {
+      "id": 480,
+      "topic": "Topic 1",
+      "question": "An organization is establishing a privacy program to ensure that personally identifiable information (PII) is properly protected. What is the FIRST action the organization should take to establish the program?",
+      "options": [
+        "Appoint a senior official to oversee the privacy program",
+        "Allocate sufficient resources to implement the privacy program",
+        "Develop a strategic organizational privacy plan",
+        "Monitor privacy laws and policy changes"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Appointing a senior privacy official first establishes leadership, accountability, and authority necessary to develop and implement the privacy program.",
+      "communityVote": {
+        "A": "73%",
+        "C": "27%"
+      }
+    },
+    {
+      "id": 481,
+      "topic": "Topic 1",
+      "question": "With regards to physical security, what is the MOST critical element of an organization's recovery plan?",
+      "options": [
+        "Restore monitoring",
+        "Restore communications",
+        "Restore the network",
+        "Restore power"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Power restoration is the foundation - all other systems (monitoring, communications, network) depend on electrical power to function.",
+      "communityVote": {
+        "D": "90%",
+        "Other": "10%"
+      }
+    },
+    {
+      "id": 482,
+      "topic": "Topic 1",
+      "question": "An application developer is deciding on the amount of idle session time that the application allows before a timeout. Which of the following is the BEST reason for determining the session timeout requirement?",
+      "options": [
+        "Application requirements",
+        "Industry best practices",
+        "Industry feedback",
+        "Management feedback"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Session timeout should be based on application-specific requirements, considering data sensitivity, user workflows, and security needs of that particular application.",
+      "communityVote": {
+        "A": "56%",
+        "B": "44%"
+      }
+    },
+    {
+      "id": 483,
+      "topic": "Topic 1",
+      "question": "When securing Hypertext Markup Language (HTML) text data, which is the purpose of the escape function?",
+      "options": [
+        "Ending the current process to protect the code",
+        "Providing an exit path for user input",
+        "Replacing potentially harmful characters",
+        "Preventing unauthorized users from writing data"
+      ],
+      "correctAnswer": "C",
+      "explanation": "HTML escaping replaces potentially harmful characters (like <, >, &) with safe equivalents, preventing XSS attacks by ensuring user input is treated as data, not code.",
+      "communityVote": {
+        "C": "100%"
+      }
+    },
+    {
+      "id": 484,
+      "topic": "Topic 1",
+      "question": "An information security consultant is asked to make recommendations for a small business to protect the access to information, stored on network drives. The small business supports several government agencies that manage highly sensitive information. Which of the following recommendations is BEST to achieve this objective?",
+      "options": [
+        "Develop and implement a security information and event monitoring system",
+        "Develop and implement access management policies and procedures",
+        "Develop and implement data center access policies and procedures",
+        "Develop and implement a security operations center (SOC) for access monitoring"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Access management policies and procedures provide the foundation for controlling who can access sensitive information, essential for protecting government agency data.",
+      "communityVote": {
+        "B": "100%"
+      }
+    }
+  ]
+}
