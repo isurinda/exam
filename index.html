@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
@@ -603,7 +602,7 @@
             padding: 15px;
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .stat-value {
@@ -653,243 +652,266 @@
             }
 
             .header {
-                padding: 20px 15px;
+                padding: 10px 12px;
             }
 
             .header h1 {
-                font-size: 20px;
-                margin-bottom: 5px;
+                font-size: 16px;
+                margin-bottom: 2px;
             }
 
             .header p {
-                font-size: 13px;
+                font-size: 11px;
             }
 
             .reset-data-btn {
-                top: 15px;
-                right: 15px;
-                padding: 6px 12px;
-                font-size: 11px;
+                top: 8px;
+                right: 8px;
+                padding: 4px 8px;
+                font-size: 9px;
             }
 
             .exam-content {
-                padding: 15px;
+                padding: 10px;
             }
 
             .stats-container {
-                padding: 15px;
-                gap: 10px;
+                padding: 8px 12px;
+                gap: 6px;
+                display: flex !important;
+                flex-direction: row;
+                justify-content: space-around;
             }
 
             .stat-item {
-                min-width: 70px;
+                min-width: 50px;
+                padding: 6px 4px;
+                flex: 1;
             }
 
             .stat-value {
-                font-size: 20px;
+                font-size: 16px;
             }
 
             .stat-label {
-                font-size: 11px;
+                font-size: 9px;
             }
 
             .navigation {
-                flex-direction: column;
-                gap: 10px;
-                padding: 15px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+                padding: 8px 10px;
                 padding-top: 0;
             }
 
             .nav-button {
                 width: 100%;
-                padding: 14px 20px;
-                font-size: 15px;
-                min-height: 48px;
-                /* Touch target size */
+                padding: 8px 12px;
+                font-size: 12px;
+                min-height: 38px;
+            }
+            
+            #saveButton {
+                grid-column: 1 / -1;
             }
 
             .progress-bar {
-                margin: 15px;
+                margin: 8px 10px;
                 margin-top: 0;
+                padding: 6px;
             }
 
             .progress-info {
-                font-size: 13px;
+                font-size: 11px;
+                margin-bottom: 4px;
+            }
+
+            .progress-track {
+                height: 5px;
             }
 
             .question-container {
-                padding: 15px;
+                padding: 8px 10px;
             }
 
             .question-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
-            }
-
-            .question-number {
-                font-size: 13px;
-            }
-
-            .question-topic {
-                font-size: 12px;
-            }
-
-            .question-text {
-                font-size: 16px;
-                line-height: 1.6;
-            }
-
-            .option {
-                padding: 14px;
-                font-size: 15px;
-                min-height: 48px;
-                /* Touch target size */
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 8px;
                 margin-bottom: 10px;
             }
 
-            .option-letter {
-                min-width: 32px;
-                height: 32px;
+            .question-number {
+                font-size: 11px;
+            }
+
+            .question-topic {
+                font-size: 10px;
+            }
+
+            .question-text {
                 font-size: 14px;
+                line-height: 1.4;
+                margin-bottom: 10px;
+            }
+
+            .option {
+                padding: 10px;
+                font-size: 13px;
+                min-height: 40px;
+                margin-bottom: 6px;
+            }
+
+            .option-letter {
+                min-width: 26px;
+                height: 26px;
+                font-size: 12px;
+            }
+
+            .option-text {
+                font-size: 13px;
+                line-height: 1.3;
             }
 
             .feedback {
-                font-size: 15px;
-                padding: 12px 15px;
+                font-size: 14px;
+                padding: 10px 12px;
+                margin: 10px 0;
             }
 
             .explanation {
-                padding: 15px;
+                padding: 12px;
+                margin-top: 10px;
             }
 
             .explanation-title {
-                font-size: 15px;
+                font-size: 14px;
+                margin-bottom: 6px;
             }
 
             .explanation-text {
-                font-size: 14px;
-                line-height: 1.6;
+                font-size: 13px;
+                line-height: 1.5;
             }
 
             .community-vote {
-                padding: 15px;
+                padding: 12px;
+                margin-top: 10px;
             }
 
             .community-vote-title {
-                font-size: 14px;
+                font-size: 13px;
+                margin-bottom: 6px;
             }
 
             .vote-item {
-                font-size: 13px;
-                padding: 6px 12px;
+                font-size: 12px;
+                padding: 5px 10px;
             }
 
             .database-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
-                padding: 15px;
+                gap: 12px;
+                padding: 12px;
             }
 
             .database-card {
-                padding: 15px;
+                padding: 12px;
             }
 
             .database-title {
-                font-size: 16px;
+                font-size: 15px;
             }
 
             .database-questions {
-                font-size: 13px;
+                font-size: 12px;
             }
 
             .database-stats {
-                gap: 8px;
+                gap: 6px;
             }
 
             .stat-badge {
-                font-size: 11px;
-                padding: 4px 8px;
+                font-size: 10px;
+                padding: 3px 7px;
             }
 
             .database-actions {
                 flex-direction: column;
-                gap: 8px;
+                gap: 6px;
             }
 
             .db-button {
                 width: 100%;
-                padding: 12px;
-                font-size: 14px;
-                min-height: 44px;
-                /* Touch target size */
+                padding: 10px;
+                font-size: 13px;
+                min-height: 40px;
             }
 
             .file-upload-section {
-                padding: 15px;
-                margin: 15px;
+                padding: 12px;
+                margin: 12px;
             }
 
             .upload-area {
-                padding: 30px 15px;
+                padding: 25px 12px;
             }
 
             .upload-title {
-                font-size: 15px;
+                font-size: 14px;
             }
 
             .upload-description {
-                font-size: 13px;
+                font-size: 12px;
             }
 
             .modal-content {
                 width: 95%;
-                padding: 20px;
+                padding: 18px;
                 margin: 10px;
             }
 
             .modal-title {
-                font-size: 18px;
+                font-size: 17px;
             }
 
             .modal-description {
-                font-size: 13px;
+                font-size: 12px;
             }
 
             .reset-option {
-                padding: 12px;
+                padding: 10px;
             }
 
             .reset-option-icon {
-                font-size: 20px;
+                font-size: 18px;
             }
 
             .reset-option-title {
-                font-size: 14px;
+                font-size: 13px;
             }
 
             .reset-option-desc {
-                font-size: 11px;
+                font-size: 10px;
             }
 
             .modal-button {
-                padding: 12px 20px;
-                font-size: 14px;
-                min-height: 44px;
-                /* Touch target size */
+                padding: 10px 18px;
+                font-size: 13px;
+                min-height: 40px;
             }
 
             .save-indicator {
-                top: 10px;
-                right: 10px;
-                font-size: 12px;
-                padding: 8px 15px;
+                top: 8px;
+                right: 8px;
+                font-size: 11px;
+                padding: 6px 12px;
             }
 
             /* Prevent text selection on double-tap */
-            .nav-button,
-            .option,
-            .db-button {
+            .nav-button, .option, .db-button {
                 -webkit-user-select: none;
                 user-select: none;
                 -webkit-tap-highlight-color: transparent;
@@ -901,18 +923,22 @@
             }
 
             /* Prevent zoom on input focus */
-            input,
-            select,
-            textarea {
+            input, select, textarea {
                 font-size: 16px !important;
+            }
+
+            /* Compact stats grid for mobile */
+            .stats {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+                padding: 10px;
             }
         }
     </style>
 </head>
-
 <body>
     <div class="save-indicator" id="saveIndicator">✓ Progress Saved</div>
-
+    
     <!-- Reset Data Modal -->
     <div class="modal-overlay" id="resetModal">
         <div class="modal-content">
@@ -920,7 +946,7 @@
             <div class="modal-description">
                 Choose what data you want to reset. This action cannot be undone.
             </div>
-
+            
             <div class="reset-options">
                 <div class="reset-option" onclick="resetSavedProgress()">
                     <div class="reset-option-icon">💾</div>
@@ -929,7 +955,7 @@
                         <div class="reset-option-desc">Remove current saved exam position</div>
                     </div>
                 </div>
-
+                
                 <div class="reset-option" onclick="resetAllStatistics()">
                     <div class="reset-option-icon">📊</div>
                     <div class="reset-option-content">
@@ -937,7 +963,7 @@
                         <div class="reset-option-desc">Clear attempts and scores for all databases</div>
                     </div>
                 </div>
-
+                
                 <div class="reset-option" onclick="resetEverything()">
                     <div class="reset-option-icon">🔄</div>
                     <div class="reset-option-content">
@@ -946,13 +972,13 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="modal-buttons">
                 <button class="modal-button cancel" onclick="closeResetMenu()">Cancel</button>
             </div>
         </div>
     </div>
-
+    
     <div class="container">
         <div class="header">
             <button class="reset-data-btn" onclick="showResetMenu()">🗑️ Reset Data</button>
@@ -963,7 +989,7 @@
         <div id="databaseSelector" class="database-selector">
             <h2>📚 Select Question Database</h2>
             <div id="databaseGrid" class="database-grid"></div>
-
+            
             <div class="file-upload-section">
                 <p style="margin-bottom: 15px; color: #666; font-size: 14px;">Or load a custom database</p>
                 <label for="fileInput" class="file-input-label">
@@ -991,8 +1017,7 @@
 
             <div class="navigation">
                 <button class="nav-button secondary" id="prevButton" onclick="previousQuestion()">← Previous</button>
-                <button class="nav-button secondary" id="saveButton" onclick="saveProgress()"
-                    style="background: #4caf50; color: white; border-color: #4caf50;">💾 Save Progress</button>
+                <button class="nav-button secondary" id="saveButton" onclick="saveProgress()" style="background: #4caf50; color: white; border-color: #4caf50;">💾 Save Progress</button>
                 <button class="nav-button secondary" id="backButton" onclick="backToMenu()">📚 Back to Menu</button>
                 <button class="nav-button primary" id="nextButton" onclick="nextQuestion()">Next →</button>
             </div>
@@ -1066,7 +1091,7 @@
                 console.warn('No database loaded, cannot save progress');
                 return;
             }
-
+            
             const progress = {
                 databaseName: currentDatabaseName,
                 currentQuestionIndex: currentQuestionIndex,
@@ -1074,10 +1099,10 @@
                 stats: stats,
                 timestamp: new Date().toISOString()
             };
-
+            
             localStorage.setItem('exam_progress', JSON.stringify(progress));
             console.log('Progress saved:', progress);
-
+            
             // Show save indicator
             const indicator = document.getElementById('saveIndicator');
             indicator.classList.add('show');
@@ -1094,7 +1119,7 @@
                     console.log('No saved progress in localStorage');
                     return null;
                 }
-
+                
                 const parsed = JSON.parse(saved);
                 console.log('Loaded progress:', parsed);
                 return parsed;
@@ -1109,14 +1134,14 @@
             try {
                 const saved = loadProgress();
                 if (!saved) return false;
-
+                
                 // Check if saved progress matches this database
                 if (saved.databaseName !== dbName) return false;
-
+                
                 // Check if progress data is valid
                 if (typeof saved.currentQuestionIndex !== 'number') return false;
                 if (!Array.isArray(saved.selectedAnswers)) return false;
-
+                
                 return true;
             } catch (error) {
                 console.error('Error checking saved progress:', error);
@@ -1149,7 +1174,6 @@
                 { name: 'questions-set10.json', title: 'Exam J', questions: 34 }
             ];
 
-
             const grid = document.getElementById('databaseGrid');
             grid.innerHTML = '';
 
@@ -1163,13 +1187,13 @@
         function createDatabaseCard(filename, title, questionCount, stats) {
             const card = document.createElement('div');
             card.className = 'database-card';
-
+            
             const hasSaved = hasSavedProgress(filename);
-
+            
             let statsHTML = '';
             if (stats.attempts > 0) {
                 const avgScore = Math.round((stats.totalCorrect / stats.totalQuestions) * 100);
-
+                
                 statsHTML = `
                     <div class="database-stats">
                         <div class="stat-badge attempts">
@@ -1220,7 +1244,7 @@
             try {
                 const response = await fetch(filename);
                 if (!response.ok) throw new Error('Database not found');
-
+                
                 const data = await response.json();
                 currentDatabaseName = filename;
                 loadDatabase(data);
@@ -1231,12 +1255,12 @@
 
         async function resumeProgress(filename) {
             const saved = loadProgress();
-
+            
             if (!saved) {
                 alert('No saved progress found.');
                 return;
             }
-
+            
             if (saved.databaseName !== filename) {
                 alert('No saved progress found for this database.');
                 return;
@@ -1245,28 +1269,28 @@
             try {
                 const response = await fetch(filename);
                 if (!response.ok) throw new Error('Database not found');
-
+                
                 const data = await response.json();
-
+                
                 if (!data.questions || data.questions.length === 0) {
                     alert('Invalid database file.');
                     return;
                 }
-
+                
                 currentDatabaseName = filename;
-
+                
                 // Restore saved state
                 currentDatabase = data;
                 questions = data.questions;
                 currentQuestionIndex = saved.currentQuestionIndex || 0;
                 selectedAnswers = saved.selectedAnswers || new Array(questions.length).fill(null);
                 stats = saved.stats || { correct: 0, incorrect: 0, attempted: 0 };
-
+                
                 // Validate saved data
                 if (currentQuestionIndex >= questions.length) {
                     currentQuestionIndex = 0;
                 }
-
+                
                 answered = selectedAnswers[currentQuestionIndex] !== null;
 
                 document.getElementById('databaseSelector').style.display = 'none';
@@ -1274,10 +1298,10 @@
 
                 displayQuestion();
                 updateStats();
-
+                
                 // Show success message with details
                 const progressMsg = `Progress restored!\n\nContinuing from Question ${currentQuestionIndex + 1} of ${questions.length}\nCurrent Score: ${stats.correct}/${stats.attempted}`;
-
+                
                 // Use visual notification instead of alert
                 const indicator = document.getElementById('saveIndicator');
                 indicator.textContent = '✓ Progress Restored!';
@@ -1290,7 +1314,7 @@
                         indicator.style.background = '#4caf50';
                     }, 300);
                 }, 3000);
-
+                
             } catch (error) {
                 console.error('Resume error:', error);
                 alert('Could not load database: ' + filename + '\n\nPlease make sure the file is in the same directory.');
@@ -1302,10 +1326,10 @@
             if (!file) return;
 
             const reader = new FileReader();
-            reader.onload = function (e) {
+            reader.onload = function(e) {
                 try {
                     const data = JSON.parse(e.target.result);
-
+                    
                     if (!data.questions || !Array.isArray(data.questions)) {
                         alert('Invalid JSON format. Please ensure the file contains a "questions" array.');
                         return;
@@ -1339,14 +1363,14 @@
             // Only ask about saving if user has made progress
             if (stats.attempted > 0 && currentDatabaseName) {
                 const shouldSave = confirm('Do you want to save your progress before returning to the menu?\n\nClick OK to save, or Cancel to discard progress.');
-
+                
                 if (shouldSave) {
                     saveProgress();
                 } else {
                     // Clear saved progress if user chooses to discard
                     localStorage.removeItem('exam_progress');
                 }
-
+                
                 // Save attempt statistics regardless
                 saveDatabaseStats(currentDatabaseName, stats.correct, stats.attempted);
             } else {
@@ -1359,10 +1383,10 @@
 
             document.getElementById('examContent').style.display = 'none';
             document.getElementById('databaseSelector').style.display = 'block';
-
+            
             // Refresh database cards to show updated stats
             initializeDatabases();
-
+            
             // Reset file input
             document.getElementById('fileInput').value = '';
         }
@@ -1371,7 +1395,7 @@
             const question = questions[currentQuestionIndex];
             answered = selectedAnswers[currentQuestionIndex] !== null;
 
-            document.getElementById('questionNumber').textContent =
+            document.getElementById('questionNumber').textContent = 
                 `Question ${currentQuestionIndex + 1} of ${questions.length}`;
             document.getElementById('questionTopic').textContent = question.topic || 'Topic 1';
             document.getElementById('questionText').textContent = question.question;
@@ -1432,7 +1456,7 @@
                 voteDiv.style.display = 'block';
                 const distDiv = document.getElementById('voteDistribution');
                 distDiv.innerHTML = '';
-
+                
                 Object.entries(question.communityVote).forEach(([option, percentage]) => {
                     const item = document.createElement('div');
                     item.className = 'vote-item';
@@ -1444,7 +1468,7 @@
             }
 
             document.getElementById('prevButton').disabled = currentQuestionIndex === 0;
-            document.getElementById('nextButton').textContent =
+            document.getElementById('nextButton').textContent = 
                 currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next →';
 
             updateProgress();
@@ -1462,7 +1486,7 @@
                 }
                 const selected = selectedAnswers[currentQuestionIndex];
                 const index = selected.indexOf(letter);
-
+                
                 if (index > -1) {
                     selected.splice(index, 1);
                 } else {
@@ -1527,8 +1551,8 @@
 
             const feedbackDiv = document.getElementById('feedback');
             feedbackDiv.className = 'feedback show ' + (isCorrect ? 'correct' : 'incorrect');
-            feedbackDiv.innerHTML = isCorrect
-                ? '✓ Correct! Well done.'
+            feedbackDiv.innerHTML = isCorrect 
+                ? '✓ Correct! Well done.' 
                 : `✗ Incorrect. The correct answer is ${Array.isArray(correctAnswer) ? correctAnswer.join(', ') : correctAnswer}.`;
 
             if (question.explanation) {
@@ -1549,7 +1573,7 @@
                     // Clear saved progress since exam is complete
                     localStorage.removeItem('exam_progress');
                 }
-
+                
                 const percentage = Math.round((stats.correct / stats.attempted) * 100);
                 if (confirm(`🎉 Exam Complete!\n\nScore: ${percentage}%\nCorrect: ${stats.correct} / ${stats.attempted}\n\nWould you like to return to the database menu?`)) {
                     backToMenu();
@@ -1577,9 +1601,9 @@
         function updateStats() {
             document.getElementById('correctCount').textContent = stats.correct;
             document.getElementById('incorrectCount').textContent = stats.incorrect;
-
-            const percentage = stats.attempted > 0
-                ? Math.round((stats.correct / stats.attempted) * 100)
+            
+            const percentage = stats.attempted > 0 
+                ? Math.round((stats.correct / stats.attempted) * 100) 
                 : 0;
             document.getElementById('scorePercent').textContent = percentage + '%';
         }
@@ -1600,7 +1624,7 @@
             if (confirm('⚠️ Are you sure you want to clear your saved progress?\n\nThis will remove your current exam position but keep your statistics.')) {
                 localStorage.removeItem('exam_progress');
                 closeResetMenu();
-
+                
                 // Show notification
                 const indicator = document.getElementById('saveIndicator');
                 indicator.textContent = '✓ Progress Cleared';
@@ -1613,7 +1637,7 @@
                         indicator.style.background = '#4caf50';
                     }, 300);
                 }, 2000);
-
+                
                 // Refresh display if on database selector
                 if (document.getElementById('databaseSelector').style.display !== 'none') {
                     initializeDatabases();
@@ -1630,9 +1654,9 @@
                         localStorage.removeItem(key);
                     }
                 });
-
+                
                 closeResetMenu();
-
+                
                 // Show notification
                 const indicator = document.getElementById('saveIndicator');
                 indicator.textContent = '✓ Statistics Reset';
@@ -1645,7 +1669,7 @@
                         indicator.style.background = '#4caf50';
                     }, 300);
                 }, 2000);
-
+                
                 // Refresh database cards
                 if (document.getElementById('databaseSelector').style.display !== 'none') {
                     initializeDatabases();
@@ -1664,9 +1688,9 @@
                             localStorage.removeItem(key);
                         }
                     });
-
+                    
                     closeResetMenu();
-
+                    
                     // Show notification
                     const indicator = document.getElementById('saveIndicator');
                     indicator.textContent = '✓ All Data Cleared';
@@ -1679,12 +1703,12 @@
                             indicator.style.background = '#4caf50';
                         }, 300);
                     }, 3000);
-
+                    
                     // Refresh database cards
                     if (document.getElementById('databaseSelector').style.display !== 'none') {
                         initializeDatabases();
                     }
-
+                    
                     // If in exam, go back to menu
                     if (document.getElementById('examContent').style.display !== 'none') {
                         document.getElementById('examContent').style.display = 'none';
@@ -1696,12 +1720,11 @@
         }
 
         // Close modal when clicking outside
-        document.getElementById('resetModal').addEventListener('click', function (e) {
+        document.getElementById('resetModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeResetMenu();
             }
         });
     </script>
 </body>
-
 </html>
