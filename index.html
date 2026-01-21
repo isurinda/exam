@@ -644,8 +644,6 @@
             padding: 4px 10px;
             border-radius: 4px;
             font-size: 12px;
-        }
-
         @media (max-width: 768px) {
             .container {
                 margin: 0;
@@ -654,6 +652,7 @@
                 height: 100vh;
                 display: flex;
                 flex-direction: column;
+                overflow: hidden;
             }
 
             .header {
@@ -670,7 +669,6 @@
                 font-size: 10px;
             }
 
-            /* Make reset button icon-only on mobile */
             .reset-data-btn {
                 top: 10px;
                 right: 10px;
@@ -688,68 +686,47 @@
             }
 
             .exam-content {
-                padding: 0;
                 flex: 1;
                 display: flex;
                 flex-direction: column;
-                position: relative;
+                padding: 8px;
+                gap: 8px;
                 overflow: hidden;
             }
 
-            /* Wrapper for scrollable content */
-            .exam-content > .stats,
-            .exam-content > .progress-bar,
-            .exam-content > .question-container {
-                flex-shrink: 0;
-            }
-
-            .exam-content > .question-container {
-                flex: 1;
-                overflow-y: auto;
-                overflow-x: hidden;
-            }
-
-            .navigation {
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                display: flex;
+            .stats {
+                display: flex !important;
                 flex-direction: row;
                 gap: 4px;
-                padding: 10px 8px;
-                padding-bottom: calc(10px + env(safe-area-inset-bottom));
-                background: white;
-                border-top: 2px solid #e0e0e0;
-                box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
-                z-index: 100;
+                padding: 6px 8px;
+                justify-content: space-around;
+                flex-shrink: 0;
+                background: #f8f9fa;
+                border-radius: 8px;
             }
-
-            .nav-button {
+            
+            .stats .stat-item {
+                min-width: 40px;
+                padding: 4px 2px;
                 flex: 1;
-                padding: 12px 4px;
-                font-size: 16px;
-                min-height: 48px;
-                white-space: nowrap;
+                box-shadow: none;
             }
             
-            #saveButton {
-                flex: 1;
+            .stats .stat-value {
+                font-size: 14px;
             }
             
-            /* Hide text, show only icons on mobile */
-            .btn-text {
-                display: none;
-            }
-            
-            .btn-icon {
-                font-size: 22px;
+            .stats .stat-label {
+                font-size: 8px;
+                margin-top: 2px;
             }
 
             .progress-bar {
-                margin: 6px 8px;
-                padding: 6px;
+                padding: 6px 8px;
                 flex-shrink: 0;
+                background: #f8f9fa;
+                border-radius: 8px;
+                margin: 0;
             }
 
             .progress-info {
@@ -761,13 +738,14 @@
                 height: 5px;
             }
 
-            /* Scrollable question container */
             .question-container {
                 flex: 1;
                 overflow-y: auto;
                 overflow-x: hidden;
                 padding: 10px;
-                padding-bottom: 80px;
+                background: white;
+                border-radius: 8px;
+                border: 2px solid #e0e0e0;
                 -webkit-overflow-scrolling: touch;
             }
 
@@ -820,7 +798,7 @@
             .explanation {
                 padding: 12px;
                 margin-top: 10px;
-                margin-bottom: 20px;
+                margin-bottom: 10px;
             }
 
             .explanation-title {
@@ -836,7 +814,7 @@
             .community-vote {
                 padding: 12px;
                 margin-top: 10px;
-                margin-bottom: 40px;
+                margin-bottom: 10px;
             }
 
             .community-vote-title {
@@ -847,6 +825,35 @@
             .vote-item {
                 font-size: 12px;
                 padding: 5px 10px;
+            }
+
+            .navigation {
+                display: flex;
+                flex-direction: row;
+                gap: 4px;
+                padding: 8px;
+                padding-top: 0;
+                flex-shrink: 0;
+            }
+
+            .nav-button {
+                flex: 1;
+                padding: 12px 4px;
+                font-size: 16px;
+                min-height: 48px;
+                white-space: nowrap;
+            }
+            
+            #saveButton {
+                flex: 1;
+            }
+            
+            .btn-text {
+                display: none;
+            }
+            
+            .btn-icon {
+                font-size: 22px;
             }
 
             .database-grid {
@@ -948,47 +955,18 @@
                 padding: 6px 12px;
             }
 
-            /* Prevent text selection on double-tap */
             .nav-button, .option, .db-button {
                 -webkit-user-select: none;
                 user-select: none;
                 -webkit-tap-highlight-color: transparent;
             }
 
-            /* Smooth scrolling for mobile */
             html {
                 scroll-behavior: smooth;
             }
 
-            /* Prevent zoom on input focus */
             input, select, textarea {
                 font-size: 16px !important;
-            }
-
-            /* Compact stats grid for mobile */
-            .stats {
-                display: flex !important;
-                flex-direction: row;
-                gap: 4px;
-                padding: 6px 8px;
-                justify-content: space-around;
-                flex-shrink: 0;
-            }
-            
-            .stats .stat-item {
-                min-width: 40px;
-                padding: 4px 2px;
-                flex: 1;
-                box-shadow: none;
-            }
-            
-            .stats .stat-value {
-                font-size: 14px;
-            }
-            
-            .stats .stat-label {
-                font-size: 8px;
-                margin-top: 2px;
             }
         }
     </style>
