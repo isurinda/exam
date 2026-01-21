@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam Simulator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#667eea">
+    <title>CISSP Exam Simulator</title>
     <style>
         * {
             margin: 0;
@@ -16,6 +20,16 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             padding: 20px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+                overflow: hidden;
+                height: 100vh;
+            }
         }
 
         .container {
@@ -297,6 +311,13 @@
             display: flex;
             align-items: flex-start;
             gap: 12px;
+            min-height: 56px;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .option:active {
+            transform: scale(0.98);
         }
 
         .option:hover {
@@ -406,6 +427,13 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
+            min-height: 48px;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .nav-button:active:not(:disabled) {
+            transform: scale(0.97);
         }
 
         .nav-button:disabled {
@@ -622,23 +650,345 @@
             .container {
                 margin: 0;
                 border-radius: 0;
+                padding: 0;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .header {
+                padding: 8px 10px;
+                flex-shrink: 0;
             }
 
             .header h1 {
-                font-size: 22px;
+                font-size: 15px;
+                margin-bottom: 2px;
             }
 
-            .question-text {
-                font-size: 16px;
+            .header p {
+                font-size: 10px;
+            }
+
+            /* Make reset button icon-only on mobile */
+            .reset-data-btn {
+                top: 10px;
+                right: 10px;
+                padding: 6px 8px;
+                font-size: 18px;
+                min-width: 36px;
+            }
+            
+            .reset-data-btn .btn-text {
+                display: none;
+            }
+            
+            .reset-data-btn .btn-icon {
+                font-size: 18px;
+            }
+
+            .exam-content {
+                padding: 0;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* Wrapper for scrollable content */
+            .exam-content > .stats,
+            .exam-content > .progress-bar,
+            .exam-content > .question-container {
+                flex-shrink: 0;
+            }
+
+            .exam-content > .question-container {
+                flex: 1;
+                overflow-y: auto;
+                overflow-x: hidden;
             }
 
             .navigation {
-                flex-direction: column;
-                gap: 10px;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                display: flex;
+                flex-direction: row;
+                gap: 4px;
+                padding: 10px 8px;
+                padding-bottom: calc(10px + env(safe-area-inset-bottom));
+                background: white;
+                border-top: 2px solid #e0e0e0;
+                box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+                z-index: 100;
+            }
+
+            .nav-button {
+                flex: 1;
+                padding: 12px 4px;
+                font-size: 16px;
+                min-height: 48px;
+                white-space: nowrap;
+            }
+            
+            #saveButton {
+                flex: 1;
+            }
+            
+            /* Hide text, show only icons on mobile */
+            .btn-text {
+                display: none;
+            }
+            
+            .btn-icon {
+                font-size: 22px;
+            }
+
+            .progress-bar {
+                margin: 6px 8px;
+                padding: 6px;
+                flex-shrink: 0;
+            }
+
+            .progress-info {
+                font-size: 11px;
+                margin-bottom: 4px;
+            }
+
+            .progress-track {
+                height: 5px;
+            }
+
+            /* Scrollable question container */
+            .question-container {
+                flex: 1;
+                overflow-y: auto;
+                overflow-x: hidden;
+                padding: 10px;
+                padding-bottom: 80px;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .question-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 10px;
+            }
+
+            .question-number {
+                font-size: 11px;
+            }
+
+            .question-topic {
+                font-size: 10px;
+            }
+
+            .question-text {
+                font-size: 14px;
+                line-height: 1.4;
+                margin-bottom: 10px;
+            }
+
+            .option {
+                padding: 10px;
+                font-size: 13px;
+                min-height: 40px;
+                margin-bottom: 6px;
+            }
+
+            .option-letter {
+                min-width: 26px;
+                height: 26px;
+                font-size: 12px;
+            }
+
+            .option-text {
+                font-size: 13px;
+                line-height: 1.3;
+            }
+
+            .feedback {
+                font-size: 14px;
+                padding: 10px 12px;
+                margin: 10px 0;
+            }
+
+            .explanation {
+                padding: 12px;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+
+            .explanation-title {
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+
+            .explanation-text {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+
+            .community-vote {
+                padding: 12px;
+                margin-top: 10px;
+                margin-bottom: 40px;
+            }
+
+            .community-vote-title {
+                font-size: 13px;
+                margin-bottom: 6px;
+            }
+
+            .vote-item {
+                font-size: 12px;
+                padding: 5px 10px;
             }
 
             .database-grid {
                 grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 12px;
+            }
+
+            .database-card {
+                padding: 12px;
+            }
+
+            .database-title {
+                font-size: 15px;
+            }
+
+            .database-questions {
+                font-size: 12px;
+            }
+
+            .database-stats {
+                gap: 6px;
+            }
+
+            .stat-badge {
+                font-size: 10px;
+                padding: 3px 7px;
+            }
+
+            .database-actions {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .db-button {
+                width: 100%;
+                padding: 10px;
+                font-size: 13px;
+                min-height: 40px;
+            }
+
+            .file-upload-section {
+                padding: 12px;
+                margin: 12px;
+            }
+
+            .upload-area {
+                padding: 25px 12px;
+            }
+
+            .upload-title {
+                font-size: 14px;
+            }
+
+            .upload-description {
+                font-size: 12px;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 18px;
+                margin: 10px;
+            }
+
+            .modal-title {
+                font-size: 17px;
+            }
+
+            .modal-description {
+                font-size: 12px;
+            }
+
+            .reset-option {
+                padding: 10px;
+            }
+
+            .reset-option-icon {
+                font-size: 18px;
+            }
+
+            .reset-option-title {
+                font-size: 13px;
+            }
+
+            .reset-option-desc {
+                font-size: 10px;
+            }
+
+            .modal-button {
+                padding: 10px 18px;
+                font-size: 13px;
+                min-height: 40px;
+            }
+
+            .save-indicator {
+                top: 8px;
+                right: 8px;
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+
+            /* Prevent text selection on double-tap */
+            .nav-button, .option, .db-button {
+                -webkit-user-select: none;
+                user-select: none;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            /* Smooth scrolling for mobile */
+            html {
+                scroll-behavior: smooth;
+            }
+
+            /* Prevent zoom on input focus */
+            input, select, textarea {
+                font-size: 16px !important;
+            }
+
+            /* Compact stats grid for mobile */
+            .stats {
+                display: flex !important;
+                flex-direction: row;
+                gap: 4px;
+                padding: 6px 8px;
+                justify-content: space-around;
+                flex-shrink: 0;
+            }
+            
+            .stats .stat-item {
+                min-width: 40px;
+                padding: 4px 2px;
+                flex: 1;
+                box-shadow: none;
+            }
+            
+            .stats .stat-value {
+                font-size: 14px;
+            }
+            
+            .stats .stat-label {
+                font-size: 8px;
+                margin-top: 2px;
             }
         }
     </style>
@@ -688,7 +1038,7 @@
     
     <div class="container">
         <div class="header">
-            <button class="reset-data-btn" onclick="showResetMenu()">🗑️ Reset Data</button>
+            <button class="reset-data-btn" onclick="showResetMenu()"><span class="btn-icon">🗑️</span><span class="btn-text"> Reset Data</span></button>
             <h1>🎓 Certification Exam Simulator</h1>
             <p>Practice makes perfect - Test your knowledge</p>
         </div>
@@ -723,10 +1073,10 @@
             </div>
 
             <div class="navigation">
-                <button class="nav-button secondary" id="prevButton" onclick="previousQuestion()">← Previous</button>
-                <button class="nav-button secondary" id="saveButton" onclick="saveProgress()" style="background: #4caf50; color: white; border-color: #4caf50;">💾 Save Progress</button>
-                <button class="nav-button secondary" id="backButton" onclick="backToMenu()">📚 Back to Menu</button>
-                <button class="nav-button primary" id="nextButton" onclick="nextQuestion()">Next →</button>
+                <button class="nav-button secondary" id="prevButton" onclick="previousQuestion()"><span class="btn-icon">←</span><span class="btn-text"> Prev</span></button>
+                <button class="nav-button secondary" id="saveButton" onclick="saveProgress()" style="background: #4caf50; color: white; border-color: #4caf50;"><span class="btn-icon">💾</span><span class="btn-text"> Save</span></button>
+                <button class="nav-button secondary" id="backButton" onclick="backToMenu()"><span class="btn-icon">📚</span><span class="btn-text"> Menu</span></button>
+                <button class="nav-button primary" id="nextButton" onclick="nextQuestion()"><span class="btn-text">Next </span><span class="btn-icon">→</span></button>
             </div>
 
             <div class="progress-bar">
