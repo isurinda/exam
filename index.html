@@ -645,339 +645,350 @@
             padding: 4px 10px;
             border-radius: 4px;
             font-size: 12px;
+        }
 
-            @media (max-width: 768px) {
-                .container {
-                    margin: 0;
-                    border-radius: 0;
-                    padding: 0;
-                    height: 100vh;
-                    display: flex;
-                    flex-direction: column;
-                    overflow: hidden;
-                }
-
-                .header {
-                    padding: 8px 10px;
-                    flex-shrink: 0;
-                }
-
-                .header h1 {
-                    font-size: 15px;
-                    margin-bottom: 2px;
-                }
-
-                .header p {
-                    font-size: 10px;
-                }
-
-                .reset-data-btn {
-                    top: 10px;
-                    right: 10px;
-                    padding: 6px 8px;
-                    font-size: 18px;
-                    min-width: 36px;
-                }
-
-                .reset-data-btn .btn-text {
-                    display: none;
-                }
-
-                .reset-data-btn .btn-icon {
-                    font-size: 18px;
-                }
-
-                /* Fix for #examContent - the actual ID used in HTML */
-                #examContent {
-                    flex: 1;
-                    display: flex !important;
-                    flex-direction: column;
-                    padding: 8px;
-                    gap: 6px;
-                    overflow: hidden;
-                    min-height: 0;
-                }
-
-                .stats {
-                    display: flex !important;
-                    flex-direction: row;
-                    gap: 4px;
-                    padding: 4px 8px;
-                    justify-content: space-around;
-                    flex-shrink: 0;
-                    background: #f8f9fa;
-                    border-radius: 8px;
-                }
-
-                .stats .stat-item {
-                    min-width: 40px;
-                    padding: 3px 2px;
-                    flex: 1;
-                    box-shadow: none;
-                }
-
-                .stats .stat-value {
-                    font-size: 13px;
-                }
-
-                .stats .stat-label {
-                    font-size: 8px;
-                    margin-top: 1px;
-                }
-
-                .progress-bar {
-                    padding: 4px 8px;
-                    flex-shrink: 0;
-                    background: #f8f9fa;
-                    border-radius: 8px;
-                    margin: 0;
-                }
-
-                .progress-info {
-                    font-size: 11px;
-                    margin-bottom: 4px;
-                }
-
-                .progress-track {
-                    height: 5px;
-                }
-
-                .question-container {
-                    flex: 1 1 auto;
-                    overflow-y: auto;
-                    overflow-x: hidden;
-                    padding: 10px;
-                    background: white;
-                    border-radius: 8px;
-                    border: 2px solid #e0e0e0;
-                    -webkit-overflow-scrolling: touch;
-                    min-height: 0;
-                }
-
-                .question-header {
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: 8px;
-                    margin-bottom: 10px;
-                }
-
-                .question-number {
-                    font-size: 11px;
-                }
-
-                .question-topic {
-                    font-size: 10px;
-                }
-
-                .question-text {
-                    font-size: 14px;
-                    line-height: 1.4;
-                    margin-bottom: 10px;
-                }
-
-                .option {
-                    padding: 10px;
-                    font-size: 13px;
-                    min-height: 40px;
-                    margin-bottom: 6px;
-                }
-
-                .option-letter {
-                    min-width: 26px;
-                    height: 26px;
-                    font-size: 12px;
-                }
-
-                .option-text {
-                    font-size: 13px;
-                    line-height: 1.3;
-                }
-
-                .feedback {
-                    font-size: 14px;
-                    padding: 10px 12px;
-                    margin: 10px 0;
-                }
-
-                .explanation {
-                    padding: 12px;
-                    margin-top: 10px;
-                    margin-bottom: 10px;
-                }
-
-                .explanation-title {
-                    font-size: 14px;
-                    margin-bottom: 6px;
-                }
-
-                .explanation-text {
-                    font-size: 13px;
-                    line-height: 1.5;
-                }
-
-                .community-vote {
-                    padding: 12px;
-                    margin-top: 10px;
-                    margin-bottom: 10px;
-                }
-
-                .community-vote-title {
-                    font-size: 13px;
-                    margin-bottom: 6px;
-                }
-
-                .vote-item {
-                    font-size: 12px;
-                    padding: 5px 10px;
-                }
-
-                .navigation {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 4px;
-                    padding: 6px 8px;
-                    flex-shrink: 0;
-                    background: #f8f9fa;
-                }
-
-                .nav-button {
-                    flex: 1;
-                    padding: 10px 4px;
-                    font-size: 16px;
-                    min-height: 44px;
-                    white-space: nowrap;
-                }
-
-                #saveButton {
-                    flex: 1;
-                }
-
-                .btn-text {
-                    display: none;
-                }
-
-                .btn-icon {
-                    font-size: 22px;
-                }
-
-                .database-grid {
-                    grid-template-columns: 1fr;
-                    gap: 12px;
-                    padding: 12px;
-                }
-
-                .database-card {
-                    padding: 12px;
-                }
-
-                .database-title {
-                    font-size: 15px;
-                }
-
-                .database-questions {
-                    font-size: 12px;
-                }
-
-                .database-stats {
-                    gap: 6px;
-                }
-
-                .stat-badge {
-                    font-size: 10px;
-                    padding: 3px 7px;
-                }
-
-                .database-actions {
-                    flex-direction: column;
-                    gap: 6px;
-                }
-
-                .db-button {
-                    width: 100%;
-                    padding: 10px;
-                    font-size: 13px;
-                    min-height: 40px;
-                }
-
-                .file-upload-section {
-                    padding: 12px;
-                    margin: 12px;
-                }
-
-                .upload-area {
-                    padding: 25px 12px;
-                }
-
-                .upload-title {
-                    font-size: 14px;
-                }
-
-                .upload-description {
-                    font-size: 12px;
-                }
-
-                .modal-content {
-                    width: 95%;
-                    padding: 18px;
-                    margin: 10px;
-                }
-
-                .modal-title {
-                    font-size: 17px;
-                }
-
-                .modal-description {
-                    font-size: 12px;
-                }
-
-                .reset-option {
-                    padding: 10px;
-                }
-
-                .reset-option-icon {
-                    font-size: 18px;
-                }
-
-                .reset-option-title {
-                    font-size: 13px;
-                }
-
-                .reset-option-desc {
-                    font-size: 10px;
-                }
-
-                .modal-button {
-                    padding: 10px 18px;
-                    font-size: 13px;
-                    min-height: 40px;
-                }
-
-                .save-indicator {
-                    top: 8px;
-                    right: 8px;
-                    font-size: 11px;
-                    padding: 6px 12px;
-                }
-
-                .nav-button,
-                .option,
-                .db-button {
-                    -webkit-user-select: none;
-                    user-select: none;
-                    -webkit-tap-highlight-color: transparent;
-                }
-
-                html {
-                    scroll-behavior: smooth;
-                }
-
-                input,
-                select,
-                textarea {
-                    font-size: 16px !important;
-                }
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+                padding: 0;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
             }
+
+            .header {
+                padding: 8px 10px;
+                flex-shrink: 0;
+            }
+
+            .header h1 {
+                font-size: 15px;
+                margin-bottom: 2px;
+            }
+
+            .header p {
+                font-size: 10px;
+            }
+
+            .reset-data-btn {
+                top: 10px;
+                right: 10px;
+                padding: 6px 8px;
+                font-size: 18px;
+                min-width: 36px;
+            }
+
+            .reset-data-btn .btn-text {
+                display: none;
+            }
+
+            .reset-data-btn .btn-icon {
+                font-size: 18px;
+            }
+
+            /* Fix for #examContent - the actual ID used in HTML */
+            #examContent {
+                flex: 1;
+                display: flex !important;
+                flex-direction: column;
+                padding: 8px;
+                gap: 6px;
+                overflow: hidden;
+                min-height: 0;
+            }
+
+            /* Fix for #databaseSelector - make home page scrollable */
+            #databaseSelector {
+                flex: 1;
+                overflow-y: auto;
+                overflow-x: hidden;
+                -webkit-overflow-scrolling: touch;
+                min-height: 0;
+            }
+
+            .stats {
+                display: flex !important;
+                flex-direction: row;
+                gap: 4px;
+                padding: 4px 8px;
+                justify-content: space-around;
+                flex-shrink: 0;
+                background: #f8f9fa;
+                border-radius: 8px;
+            }
+
+            .stats .stat-item {
+                min-width: 40px;
+                padding: 3px 2px;
+                flex: 1;
+                box-shadow: none;
+            }
+
+            .stats .stat-value {
+                font-size: 13px;
+            }
+
+            .stats .stat-label {
+                font-size: 8px;
+                margin-top: 1px;
+            }
+
+            .progress-bar {
+                padding: 4px 8px;
+                flex-shrink: 0;
+                background: #f8f9fa;
+                border-radius: 8px;
+                margin: 0;
+            }
+
+            .progress-info {
+                font-size: 11px;
+                margin-bottom: 4px;
+            }
+
+            .progress-track {
+                height: 5px;
+            }
+
+            .question-container {
+                flex: 1 1 auto;
+                overflow-y: auto;
+                overflow-x: hidden;
+                padding: 10px;
+                background: white;
+                border-radius: 8px;
+                border: 2px solid #e0e0e0;
+                -webkit-overflow-scrolling: touch;
+                min-height: 0;
+            }
+
+            .question-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 10px;
+            }
+
+            .question-number {
+                font-size: 11px;
+            }
+
+            .question-topic {
+                font-size: 10px;
+            }
+
+            .question-text {
+                font-size: 14px;
+                line-height: 1.4;
+                margin-bottom: 10px;
+            }
+
+            .option {
+                padding: 10px;
+                font-size: 13px;
+                min-height: 40px;
+                margin-bottom: 6px;
+            }
+
+            .option-letter {
+                min-width: 26px;
+                height: 26px;
+                font-size: 12px;
+            }
+
+            .option-text {
+                font-size: 13px;
+                line-height: 1.3;
+            }
+
+            .feedback {
+                font-size: 14px;
+                padding: 10px 12px;
+                margin: 10px 0;
+            }
+
+            .explanation {
+                padding: 12px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .explanation-title {
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+
+            .explanation-text {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+
+            .community-vote {
+                padding: 12px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            .community-vote-title {
+                font-size: 13px;
+                margin-bottom: 6px;
+            }
+
+            .vote-item {
+                font-size: 12px;
+                padding: 5px 10px;
+            }
+
+            .navigation {
+                display: flex;
+                flex-direction: row;
+                gap: 4px;
+                padding: 6px 8px;
+                flex-shrink: 0;
+                background: #f8f9fa;
+            }
+
+            .nav-button {
+                flex: 1;
+                padding: 10px 4px;
+                font-size: 16px;
+                min-height: 44px;
+                white-space: nowrap;
+            }
+
+            #saveButton {
+                flex: 1;
+            }
+
+            .btn-text {
+                display: none;
+            }
+
+            .btn-icon {
+                font-size: 22px;
+            }
+
+            .database-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 12px;
+            }
+
+            .database-card {
+                padding: 12px;
+            }
+
+            .database-title {
+                font-size: 15px;
+            }
+
+            .database-questions {
+                font-size: 12px;
+            }
+
+            .database-stats {
+                gap: 6px;
+            }
+
+            .stat-badge {
+                font-size: 10px;
+                padding: 3px 7px;
+            }
+
+            .database-actions {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .db-button {
+                width: 100%;
+                padding: 10px;
+                font-size: 13px;
+                min-height: 40px;
+            }
+
+            .file-upload-section {
+                padding: 12px;
+                margin: 12px;
+            }
+
+            .upload-area {
+                padding: 25px 12px;
+            }
+
+            .upload-title {
+                font-size: 14px;
+            }
+
+            .upload-description {
+                font-size: 12px;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 18px;
+                margin: 10px;
+            }
+
+            .modal-title {
+                font-size: 17px;
+            }
+
+            .modal-description {
+                font-size: 12px;
+            }
+
+            .reset-option {
+                padding: 10px;
+            }
+
+            .reset-option-icon {
+                font-size: 18px;
+            }
+
+            .reset-option-title {
+                font-size: 13px;
+            }
+
+            .reset-option-desc {
+                font-size: 10px;
+            }
+
+            .modal-button {
+                padding: 10px 18px;
+                font-size: 13px;
+                min-height: 40px;
+            }
+
+            .save-indicator {
+                top: 8px;
+                right: 8px;
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+
+            .nav-button,
+            .option,
+            .db-button {
+                -webkit-user-select: none;
+                user-select: none;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            input,
+            select,
+            textarea {
+                font-size: 16px !important;
+            }
+        }
     </style>
 </head>
 
@@ -1028,7 +1039,7 @@
         <div class="header">
             <button class="reset-data-btn" onclick="showResetMenu()"><span class="btn-icon">🗑️</span><span
                     class="btn-text"> Reset Data</span></button>
-            <h1>🎓 Certification Exam Simulator</h1>
+            <h1>🎓 Certification Exam Simulator - JAN 26</h1>
             <p>Practice makes perfect - Test your knowledge</p>
         </div>
 
